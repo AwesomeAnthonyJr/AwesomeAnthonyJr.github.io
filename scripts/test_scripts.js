@@ -2,13 +2,18 @@ const track = document.querySelector('.carousel-group');
 const items = Array.from(track.children);
 const prevButton = document.querySelector('.carousel-button-prev');
 const nextButton = document.querySelector('.carousel-button-next');
+const expandButton = document.querySelector('.carousel-button-expand');
+const expandImage = document.querySelector('.carousel-expand-image')
 const root = document.documentElement;
-const caroGap = getComputedStyle(root).getPropertyValue('--caro-gap').trim();
+
+let caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
+let mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
 
 //console.log(caroGap);
 
+let expanded = false;
 let currentIndex = 2;
-let true_caro_gap = window.innerWidth * (parseInt(caroGap)/100);
+let true_caro_gap = 0;
 let caro_offset = window.innerWidth * 0.25;
 
 //console.log(true_caro_gap);
@@ -44,8 +49,18 @@ function snapTo(index) {
   track.style.transition = 'transform 0.2s ease';
 }
 
-prevButton.addEventListener('click', () => {
-  if (currentIndex < 1) return;
+function updateTrueGap() {
+  caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
+  mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
+  if (mobileView == 1){
+    true_caro_gap = 0;
+  } else {
+    true_caro_gap = (window.innerWidth - (2 * parseInt(caroWidth)))/2;
+  }
+  document.documentElement.style.setProperty('--caro-gap', `${true_caro_gap}px`);
+}
+
+function carouselPrev() {
   currentIndex--;
   updatePosition();
   console.log(currentIndex);
@@ -55,26 +70,98 @@ prevButton.addEventListener('click', () => {
       snapTo((items.length - 1) + 2);
     }
   }, { once: true });
-    
-});
+}
 
-nextButton.addEventListener('click', () => {
-  if (currentIndex > items.length + 2) return;
+function carouselNext() {
   currentIndex++;
   updatePosition();
 
   track.addEventListener('transitionend', () => {
-    if (currentIndex > items.length + 1) {
+    if (currentIndex > (items.length - 1) + 2) {
       snapTo(2);
     }
   }, { once: true });
+}
+
+function updateCaroImage() {
+  let url_ender = "300_400.png"
+  if (mobileView == 0) {
+    if (parseInt(caroWidth) == 300) {
+      url_ender = "360_480.png"
+    } else {
+      url_ender = "420_560.png"
+    }
+  }
+  switch (currentIndex) {
+    case 2:
+      console.log("XCVB");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    case 3:
+      console.log("KILLPROTOCOL");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    case 4:
+      console.log("MAGEHAND");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    case 5:
+      console.log("GOBLINKNIGHT");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    case 6:
+      console.log("WYRMCANYON");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    case 7:
+      console.log("SHAHARAZON");
+      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      break;
+    default:
+      console.log("unexpected!");
+  }
+}
+
+function expandCaroItem() {
+  updateCaroImage();
+  //console.log("expanded");
+  expandButton.style.transform = `scale(${1, 1})`;
+  expandImage.style.display = "block";
+}
+
+function unexpandCaroItem() {
+  //console.log("un-expanded");
+  expandButton.style.transform = `scale(${0.86, 0.86})`;
+  expandButton.addEventListener('transitionend', () => {
+    //console.log("TRANSITIONOVER");
+    expandImage.style.display = "none";
+  }, { once: true });
+}
+
+prevButton.addEventListener('click', () => {
+  if (currentIndex < 1) return;
+  carouselPrev();
+});
+
+nextButton.addEventListener('click', () => {
+  if (currentIndex > items.length + 2) return;
+  carouselNext();
+});
+
+expandButton.addEventListener('click', () => {
+  if (expanded){
+    unexpandCaroItem();
+  } else {
+    expandCaroItem();
+  }
+  expanded = !expanded;
 });
 
 window.addEventListener('resize', () => {
-  true_caro_gap = window.innerWidth * (parseInt(caroGap)/100);
   caro_offset = window.innerWidth * 0.25;
+  updateTrueGap();
   updatePosition();
 });
-
 //console.log(items.length)
-updatePosition();
+updateTrueGap();
+snapTo(2);

@@ -1,6 +1,121 @@
 :root {
   --caro-gap: 10vw;
   --caro-width: 40%;
+  --caro-height: 60%;
+  --caro-width-large: 0;
+  --caro-height-large: 0;
+  --mobile-view: 0;
+}
+
+@media screen and (max-width:9999px) {
+    :root {
+        --caro-width: 360px;
+        --caro-height: 480px;
+        --caro-width-large: 420px;
+        --caro-height-large: 560px;
+    }
+
+    .shaharazon {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .wyrm-canyon {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .goblin-knight {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .mage-hand {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .kill-protocol {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .xcvb {
+        background-image: url('images/test_360_480.png');
+    }
+}
+
+@media screen and (max-width:1100px) {
+    :root {
+        --caro-width: 360px;
+        --caro-height: 480px;
+        --caro-width-large: 420px;
+        --caro-height-large: 560px;
+    }
+
+    .shaharazon {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .wyrm-canyon {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .goblin-knight {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .mage-hand {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .kill-protocol {
+        background-image: url('images/test_360_480.png');
+    }
+
+    .xcvb {
+        background-image: url('images/test_360_480.png');
+    }
+}
+
+@media screen and (max-width:860px) {
+    :root {
+        --caro-width: 300px;
+        --caro-height: 400px;
+        --caro-width-large: 360px;
+        --caro-height-large: 480px;
+        --mobile-view: 0;
+        
+    }
+
+    .shaharazon {
+        background-image: url('images/test_300_400.png');
+    }
+
+    .wyrm-canyon {
+        background-image: url('images/test_300_400.png');
+    }
+
+    .goblin-knight {
+        background-image: url('images/test_300_400.png');
+    }
+
+    .mage-hand {
+        background-image: url('images/test_300_400.png');
+    }
+
+    .kill-protocol {
+        background-image: url('images/test_300_400.png');
+    }
+
+    .xcvb {
+        background-image: url('images/test_300_400.png');
+    }
+}
+
+@media screen and (max-width:600px) {
+    :root {
+        --caro-width: 300px;
+        --caro-height: 400px;
+        --caro-width-large: 360px;
+        --caro-height-large: 480px;
+        --mobile-view: 1;
+    }
 }
 
 body {
@@ -13,9 +128,13 @@ body {
     width: 100vw;
     margin: 0 0 0 0;
     overflow: hidden;
+    min-height: calc(var(--caro-height) + 80px);
+    background-color: red;
 }
 
 .carousel-group {
+    position: relative;
+    top: 40px;
     display: flex;
     transition: transform 0.2s ease;
     gap: var(--caro-gap);
@@ -23,10 +142,13 @@ body {
 
 .carousel-item {
     min-width: var(--caro-width);
+    min-height: var(--caro-height);
     box-sizing: border-box;
-    background: #f0f0f0;
     text-align: center;
     font-size: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .carousel-button-prev {
@@ -55,4 +177,44 @@ body {
     cursor: pointer;
     z-index: 1;
     right: 10px;
+}
+
+.carousel-button-expand {
+    min-width: var(--caro-width-large);
+    min-height: var(--caro-height-large);
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+    transform: scale(0.86, 0.86);
+}
+
+.carousel-expand-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    min-width: var(--caro-width-large);
+    min-height: var(--caro-height-large);
+    top: 0;
+    left: 0;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.center-children {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.crud {
+    font-size: 8rem;
+    height: 3000px;
 }
