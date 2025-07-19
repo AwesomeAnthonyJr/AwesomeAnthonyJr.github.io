@@ -16,7 +16,7 @@
     }
 
     .shaharazon {
-        background-image: url('images/test_360_480.png');
+        background-image: url('images/SHAHARAZON_display_360_480.png');
     }
 
     .wyrm-canyon {
@@ -49,7 +49,7 @@
     }
 
     .shaharazon {
-        background-image: url('images/test_360_480.png');
+        background-image: url('images/SHAHARAZON_display_360_480.png');
     }
 
     .wyrm-canyon {
@@ -84,7 +84,7 @@
     }
 
     .shaharazon {
-        background-image: url('images/test_300_400.png');
+        background-image: url('images/SHAHARAZON_display_300_400.png');
     }
 
     .wyrm-canyon {
@@ -104,7 +104,7 @@
     }
 
     .xcvb {
-        background-image: url('images/test_300_400.png');
+        background-image: url('images/XCVB_display_300_400.png');
     }
 }
 
@@ -204,6 +204,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: opacity 0.15s ease;
+    opacity: 0;
 }
 
 .center-children {

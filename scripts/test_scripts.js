@@ -95,7 +95,7 @@ function updateCaroImage() {
   switch (currentIndex) {
     case 2:
       console.log("XCVB");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/XCVB_display_" + url_ender + ")";
       break;
     case 3:
       console.log("KILLPROTOCOL");
@@ -115,7 +115,7 @@ function updateCaroImage() {
       break;
     case 7:
       console.log("SHAHARAZON");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/SHAHARAZON_display_" + url_ender + ")";
       break;
     default:
       console.log("unexpected!");
@@ -127,14 +127,16 @@ function expandCaroItem() {
   //console.log("expanded");
   expandButton.style.transform = `scale(${1, 1})`;
   expandImage.style.display = "block";
+  expandImage.style.opacity = "1";
 }
 
 function unexpandCaroItem() {
   //console.log("un-expanded");
   expandButton.style.transform = `scale(${0.86, 0.86})`;
+  expandImage.style.opacity = "0";
   expandButton.addEventListener('transitionend', () => {
     //console.log("TRANSITIONOVER");
-    expandImage.style.display = "none";
+    //expandImage.style.display = "none";
   }, { once: true });
 }
 
