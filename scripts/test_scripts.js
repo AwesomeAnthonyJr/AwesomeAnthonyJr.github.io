@@ -99,11 +99,11 @@ function updateCaroImage() {
       break;
     case 3:
       console.log("KILLPROTOCOL");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/KillProtocol_display_" + url_ender + ")";
       break;
     case 4:
       console.log("MAGEHAND");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/MageHand_display_" + url_ender + ")";
       break;
     case 5:
       console.log("GOBLINKNIGHT");
