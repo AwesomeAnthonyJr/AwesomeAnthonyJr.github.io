@@ -107,11 +107,11 @@ function updateCaroImage() {
       break;
     case 5:
       console.log("GOBLINKNIGHT");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/goblinknight_display_" + url_ender + ")";
       break;
     case 6:
       console.log("WYRMCANYON");
-      expandImage.style.backgroundImage = "url(" + "styles/images/test_" + url_ender + ")";
+      expandImage.style.backgroundImage = "url(" + "styles/images/WyrmCanyon_display_" + url_ender + ")";
       break;
     case 7:
       console.log("SHAHARAZON");
