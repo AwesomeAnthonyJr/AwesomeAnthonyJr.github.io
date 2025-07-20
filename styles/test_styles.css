@@ -42,6 +42,14 @@
     .carousel-group {
         top: 40px;
     }
+
+    .carousel-describers-desk {
+        display: block;
+    }
+
+    .carousel-describers-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width:1100px) {
@@ -79,9 +87,17 @@
     .carousel-group {
         top: 40px;
     }
+
+    .carousel-describers-desk {
+        display: block;
+    }
+
+    .carousel-describers-mobile {
+        display: none;
+    }
 }
 
-@media screen and (max-width:860px) {
+@media screen and (max-width:900px) {
     :root {
         --caro-width: 300px;
         --caro-height: 400px;
@@ -118,6 +134,14 @@
     .carousel-group {
         top: 40px;
     }
+
+    .carousel-describers-desk {
+        display: none;
+    }
+
+    .carousel-describers-mobile {
+        display: block;
+    }
 }
 
 @media screen and (max-width:600px) {
@@ -131,6 +155,14 @@
 
     .carousel-group {
         top: 0;
+    }
+
+    .carousel-describers-desk {
+        display: none;
+    }
+
+    .carousel-describers-mobile {
+        display: block;
     }
 }
 
@@ -237,7 +269,6 @@ body {
 }
 
 .carousel-describers-desk {
-    display: flex;
     position: absolute;
     top: 0;
     overflow: hidden;
