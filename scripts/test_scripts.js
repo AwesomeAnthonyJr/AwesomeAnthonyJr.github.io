@@ -3,7 +3,7 @@ const items = Array.from(track.children);
 const prevButton = document.querySelector('.carousel-button-prev');
 const nextButton = document.querySelector('.carousel-button-next');
 const expandButton = document.querySelector('.carousel-button-expand');
-const expandImage = document.querySelector('.carousel-expand-image')
+const expandImage = document.querySelector('.carousel-expand-image');
 const root = document.documentElement;
 
 let caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
@@ -123,8 +123,41 @@ function updateCaroImage() {
   }
 }
 
+function updateCaroDescription() {
+  if (mobileView == 1) return;
+  const background = document.querySelector('.carousel-description-background > div');
+  switch (currentIndex) {
+    case 2:
+      background.className =  'carousel-description-background-XCVB';
+      break;
+    case 3:
+      background.className =  'carousel-description-background-KillProtocol';
+      break;
+    case 4:
+      background.className =  'carousel-description-background-MageHand';
+      break;
+    case 5:
+      background.className =  'carousel-description-background-goblinknight';
+      break;
+    case 6:
+      background.className =  'carousel-description-background-WyrmCanyon';
+      break;
+    case 7:
+      background.className =  'carousel-description-background-SHAHARAZON';
+      break;
+    default:
+      console.log("unexpected!");
+  }
+}
+
+function hideCaroDescription() {
+  const background = document.querySelector('.carousel-description-background > div');
+   background.className = 'carousel-description-background-null';
+}
+
 function expandCaroItem() {
   updateCaroImage();
+  updateCaroDescription();
   //console.log("expanded");
   expandButton.style.transform = `scale(${1, 1})`;
   expandImage.style.display = "block";
@@ -132,6 +165,7 @@ function expandCaroItem() {
 }
 
 function unexpandCaroItem() {
+  hideCaroDescription();
   //console.log("un-expanded");
   expandButton.style.transform = `scale(${0.86, 0.86})`;
   expandImage.style.opacity = "0";

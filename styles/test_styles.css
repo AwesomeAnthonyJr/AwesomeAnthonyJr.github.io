@@ -235,3 +235,47 @@ body {
     font-size: 8rem;
     height: 3000px;
 }
+
+.carousel-describers-desk {
+    display: flex;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    min-width: 200px;
+    min-height: 200px;
+    z-index: 2;
+}
+
+.carousel-description-background {
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.carousel-description-background-XCVB {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -128px;
+    left: -128px;
+    background-image: url('images/XCVB_background_1.png');
+    background-repeat: repeat;
+    animation: scrollXCVBBackground 5s linear infinite;
+    min-width: 1000px;
+    min-height: 1000px;
+    z-index: 3;
+}
+
+@keyframes scrollXCVBBackground {
+    0% {
+        transform: translate(0%, 0%);
+    }
+
+    100% {
+        transform: translate(128px, 128px);
+    }
+}
+
+.carousel-description-background-null {
+    min-width: 0px;
+    min-height: 0px;
+}
