@@ -377,4 +377,7 @@ body {
     font-size: 4rem;
     color: white;
     display: none;
+    font-family: "Prompt", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
