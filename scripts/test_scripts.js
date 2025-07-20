@@ -37,7 +37,12 @@ function getSlideWidth() {
 
 function updatePosition() {
   const slideWidth = getSlideWidth();
-  track.style.transform = `translateX(-${currentIndex * (slideWidth + true_caro_gap) - caro_offset - true_caro_gap/2}px)`; 
+  if (mobileView == 1){
+    track.style.transform = `translateX(-${currentIndex * (slideWidth) - caro_offset - true_caro_gap/2}px)`; 
+  } else {
+    track.style.transform = `translateX(-${currentIndex * (slideWidth + true_caro_gap) - caro_offset - true_caro_gap/2}px)`; 
+  }
+  
 }
 
 function snapTo(index) {
@@ -52,11 +57,7 @@ function snapTo(index) {
 function updateTrueGap() {
   caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
   mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
-  if (mobileView == 1){
-    true_caro_gap = 0;
-  } else {
-    true_caro_gap = (window.innerWidth - (2 * parseInt(caroWidth)))/2;
-  }
+  true_caro_gap = (window.innerWidth - (2 * parseInt(caroWidth)))/2;
   document.documentElement.style.setProperty('--caro-gap', `${true_caro_gap}px`);
 }
 
@@ -146,11 +147,12 @@ prevButton.addEventListener('click', () => {
 });
 
 nextButton.addEventListener('click', () => {
-  if (currentIndex > items.length + 2) return;
+  if (currentIndex > items.length + 1) return;
   carouselNext();
 });
 
 expandButton.addEventListener('click', () => {
+  if (mobileView == 1) return;
   if (expanded){
     unexpandCaroItem();
   } else {
