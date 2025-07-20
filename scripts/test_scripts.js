@@ -5,6 +5,9 @@ const nextButton = document.querySelector('.carousel-button-next');
 const expandButton = document.querySelector('.carousel-button-expand');
 const expandImage = document.querySelector('.carousel-expand-image');
 const root = document.documentElement;
+const background = document.querySelector('.carousel-background');
+const darkeners = document.querySelector('.darkeners');
+const title = document.querySelector('.carousel-title');
 
 let caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
 let mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
@@ -64,7 +67,12 @@ function updateTrueGap() {
 function carouselPrev() {
   currentIndex--;
   updatePosition();
-  console.log(currentIndex);
+
+  background.style.opacity = "0";
+  background.addEventListener('transitionend', () => {
+    updateCaroBackground();
+    background.style.opacity = "1";
+  }, { once: true });
 
   track.addEventListener('transitionend', () => {
     if (currentIndex < 2) {
@@ -77,11 +85,18 @@ function carouselNext() {
   currentIndex++;
   updatePosition();
 
+  background.style.opacity = "0";
+  background.addEventListener('transitionend', () => {
+    updateCaroBackground();
+    background.style.opacity = "1";
+  }, { once: true });
+
   track.addEventListener('transitionend', () => {
     if (currentIndex > (items.length - 1) + 2) {
       snapTo(2);
     }
   }, { once: true });
+  
 }
 
 function updateCaroImage() {
@@ -123,27 +138,88 @@ function updateCaroImage() {
   }
 }
 
-function updateCaroDescription() {
+function updateCaroBackground() {
   if (mobileView == 1) return;
-  const background = document.querySelector('.carousel-description-background > div');
+  const background = document.querySelector('.carousel-background');
   switch (currentIndex) {
+    case 1:
+      //match case 7!
+      background.style.backgroundImage = "url(styles/images/SHAHARAZON_background.png)";
+      break;
     case 2:
-      background.className =  'carousel-description-background-XCVB';
+      background.style.backgroundImage = "url(styles/images/XCVB_background.png)";
       break;
     case 3:
-      background.className =  'carousel-description-background-KillProtocol';
+      background.style.backgroundImage = "url(styles/images/KillProtocol_background.png)";
       break;
     case 4:
-      background.className =  'carousel-description-background-MageHand';
+      background.style.backgroundImage = "url()";
       break;
     case 5:
-      background.className =  'carousel-description-background-goblinknight';
+      background.style.backgroundImage = "url()";
       break;
     case 6:
-      background.className =  'carousel-description-background-WyrmCanyon';
+      background.style.backgroundImage = "url()";
       break;
     case 7:
-      background.className =  'carousel-description-background-SHAHARAZON';
+      background.style.backgroundImage = "url(styles/images/SHAHARAZON_background.png)";
+      break;
+    case 8:
+      //match case 2!
+      background.style.backgroundImage = "url(styles/images/XCVB_background.png)";
+      break;
+    default:
+      console.log("unexpected!");
+  }
+}
+
+function updateCaroDescription() {
+  if (mobileView == 1) return;
+  const descriptionBG = document.querySelector('.carousel-description-background > div');
+  switch (currentIndex) {
+    case 2:
+      descriptionBG.className =  'carousel-description-background-XCVB';
+      break;
+    case 3:
+      descriptionBG.className =  'carousel-description-background-KillProtocol';
+      break;
+    case 4:
+      descriptionBG.className =  'carousel-description-background-MageHand';
+      break;
+    case 5:
+      descriptionBG.className =  'carousel-description-background-goblinknight';
+      break;
+    case 6:
+      descriptionBG.className =  'carousel-description-background-WyrmCanyon';
+      break;
+    case 7:
+      descriptionBG.className =  'carousel-description-background-SHAHARAZON';
+      break;
+    default:
+      console.log("unexpected!");
+  }
+}
+
+function updateTitle() {
+  if (mobileView == 1) return;
+  switch (currentIndex) {
+    case 2:
+      type(title, "XCVB", 20);
+      break;
+    case 3:
+      type(title, "Kill Protocol", 20);
+      break;
+    case 4:
+      type(title, "Mage Hand", 20);
+      break;
+    case 5:
+      type(title, "goblin knight", 20);
+      break;
+    case 6:
+      type(title, "Wyrm Canyon", 20);
+      break;
+    case 7:
+      type(title, "SHAHARAZON", 20);
       break;
     default:
       console.log("unexpected!");
@@ -162,6 +238,12 @@ function expandCaroItem() {
   expandButton.style.transform = `scale(${1, 1})`;
   expandImage.style.display = "block";
   expandImage.style.opacity = "1";
+
+  darkeners.style.display = "flex"
+  darkeners.style.opacity = "1";
+
+  title.style.display = "block";
+  updateTitle();
 }
 
 function unexpandCaroItem() {
@@ -169,10 +251,32 @@ function unexpandCaroItem() {
   //console.log("un-expanded");
   expandButton.style.transform = `scale(${0.86, 0.86})`;
   expandImage.style.opacity = "0";
-  expandButton.addEventListener('transitionend', () => {
-    //console.log("TRANSITIONOVER");
-    //expandImage.style.display = "none";
+  
+  darkeners.style.opacity = "0";
+
+  title.style.display = "none";
+  title.textContent = "";
+  
+  darkeners.addEventListener('transitionend', () => {
+    darkeners.style.display = "none"
   }, { once: true });
+}
+
+
+
+async function type(item, text, timeout) {
+  //title.textContent = "";
+  console.log("the length is", text.length)
+  let size = text.length;
+  for (i = 0; i < size; i++) {
+    item.textContent += text.charAt(i);
+    await sleep(timeout);
+    console.log("A")
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 prevButton.addEventListener('click', () => {
@@ -201,5 +305,6 @@ window.addEventListener('resize', () => {
   updatePosition();
 });
 //console.log(items.length)
+updateCaroBackground();
 updateTrueGap();
 snapTo(2);

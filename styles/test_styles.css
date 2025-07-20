@@ -54,34 +54,34 @@
 
 @media screen and (max-width:1100px) {
     :root {
-        --caro-width: 360px;
-        --caro-height: 480px;
-        --caro-width-large: 420px;
-        --caro-height-large: 560px;
+        --caro-width: 300px;
+        --caro-height: 400px;
+        --caro-width-large: 360px;
+        --caro-height-large: 480px;
     }
 
     .shaharazon {
-        background-image: url('images/SHAHARAZON_display_360_480.png');
+        background-image: url('images/SHAHARAZON_display_300_400.png');
     }
 
     .wyrm-canyon {
-        background-image: url('images/WyrmCanyon_display_360_480.png');
+        background-image: url('images/WyrmCanyon_display_300_400.png');
     }
 
     .goblin-knight {
-        background-image: url('images/goblinknight_display_360_480.png');
+        background-image: url('images/goblinknight_display_300_400.png');
     }
 
     .mage-hand {
-        background-image: url('images/MageHand_display_360_480.png');
+        background-image: url('images/MageHand_display_300_400.png');
     }
 
     .kill-protocol {
-        background-image: url('images/KillProtocol_display_360_480.png');
+        background-image: url('images/KillProtocol_display_300_400.png');
     }
 
     .xcvb {
-        background-image: url('images/XCVB_display_360_480.png');
+        background-image: url('images/XCVB_display_300_400.png');
     }
 
     .carousel-group {
@@ -177,7 +177,21 @@ body {
     margin: 0 0 0 0;
     overflow: hidden;
     min-height: var(--caro-height-large);
-    background-color: red;
+    background-color: white;
+    
+}
+
+.carousel-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.1s ease;
+    opacity: 1;
+    display: none;
+
 }
 
 .carousel-group {
@@ -208,7 +222,7 @@ body {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
     left: 10px;
 }
 
@@ -222,7 +236,7 @@ body {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
     right: 10px;
 }
 
@@ -233,7 +247,7 @@ body {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    z-index: 1;
+    z-index: 3;
     transition: transform 0.2s ease;
     transform-origin: center;
     transform: scale(0.86, 0.86);
@@ -274,7 +288,7 @@ body {
     overflow: hidden;
     min-width: 200px;
     min-height: 200px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .carousel-description-background {
@@ -309,4 +323,58 @@ body {
 .carousel-description-background-null {
     min-width: 0px;
     min-height: 0px;
+}
+
+.darkeners {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.15s ease;
+    opacity: 0;
+}
+
+.dark {
+    width: 0%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: black;
+    flex: 1 1 0%;
+}
+
+.darken_l {
+    width: 128px;
+    height: 100%;
+    opacity: 0.8;
+    background-image: url('images/WEB_darken_l.png');
+    flex: 0 0 auto;
+}
+
+.darken_r {
+    width: 128px;
+    height: 100%;
+    opacity: 0.8;
+    background-image: url('images/WEB_darken_r.png');
+    flex: 0 0 auto;
+}
+
+.clear {
+    width: calc(var(--caro-width-large) + 80px);
+    height: 100%;
+    opacity: 0;
+    flex: 0 0 auto;
+}
+
+.carousel-title {
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
+    margin: 0;
+    z-index: 3;
+    font-size: 4rem;
+    color: white;
+    display: none;
 }
