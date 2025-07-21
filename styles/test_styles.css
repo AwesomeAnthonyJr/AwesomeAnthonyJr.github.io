@@ -467,3 +467,17 @@ body {
     font-weight: 700;
     font-style: normal;
 }
+
+.carousel-release {
+    position: absolute;
+    left: 80px;
+    bottom: 120px;
+    margin: 0;
+    z-index: 3;
+    font-size: 2rem;
+    color: white;
+    display: none;
+    font-family: "Prompt", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

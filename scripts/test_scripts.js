@@ -8,6 +8,7 @@ const root = document.documentElement;
 const background = document.querySelector('.carousel-background');
 const darkeners = document.querySelector('.darkeners');
 const title = document.querySelector('.carousel-title');
+const release = document.querySelector('.carousel-release');
 
 let caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
 let mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
@@ -209,26 +210,52 @@ function updateCaroDescription() {
   }
 }
 
-function updateTitle() {
+async function updateTitle() {
   if (mobileView == 1) return;
   switch (currentIndex) {
     case 2:
-      type(title, "XCVB", 20);
+      await type(title, "XCVB", 20);
       break;
     case 3:
-      type(title, "Kill Protocol", 20);
+      await type(title, "Kill Protocol", 20);
       break;
     case 4:
-      type(title, "Mage Hand", 20);
+      await type(title, "Mage Hand", 20);
       break;
     case 5:
-      type(title, "goblin knight", 20);
+      await type(title, "goblin knight", 20);
       break;
     case 6:
-      type(title, "Wyrm Canyon", 20);
+      await type(title, "Wyrm Canyon", 20);
       break;
     case 7:
-      type(title, "SHAHARAZON", 20);
+      await type(title, "SHAHARAZON", 20);
+      break;
+    default:
+      console.log("unexpected!");
+  }
+}
+
+function updateRelease() {
+  if (mobileView == 1) return;
+  switch (currentIndex) {
+    case 2:
+      type(release, "May 25th 2025", 20);
+      break;
+    case 3:
+      type(release, "October 11th 2024", 20);
+      break;
+    case 4:
+      type(release, "July 31st 2024", 20);
+      break;
+    case 5:
+      type(release, "May 11th 2024", 20);
+      break;
+    case 6:
+      type(release, "April 20th 2024", 20);
+      break;
+    case 7:
+      type(release, "March 14th 2024", 20);
       break;
     default:
       console.log("unexpected!");
@@ -240,7 +267,7 @@ function hideCaroDescription() {
   background.className = 'carousel-description-background-null';
 }
 
-function expandCaroItem() {
+async function expandCaroItem() {
   updateCaroImage();
   updateCaroDescription();
   //console.log("expanded");
@@ -252,7 +279,11 @@ function expandCaroItem() {
   darkeners.style.opacity = "1";
 
   title.style.display = "block";
-  updateTitle();
+
+  release.style.display = "block";
+
+  await updateTitle();
+  updateRelease();
 }
 
 function unexpandCaroItem() {
@@ -265,6 +296,9 @@ function unexpandCaroItem() {
 
   title.style.display = "none";
   title.textContent = "";
+
+  release.style.display = "none";
+  release.textContent = "";
   
   darkeners.addEventListener('transitionend', () => {
     darkeners.style.display = "none"
