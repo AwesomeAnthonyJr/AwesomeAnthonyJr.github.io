@@ -176,24 +176,33 @@ function updateCaroBackground() {
 function updateCaroDescription() {
   if (mobileView == 1) return;
   const descriptionBG = document.querySelector('.carousel-description-background > div');
+  const descriptionTX = document.querySelector('.carousel-description-text > div');
+  document.querySelector('.carousel-description-text').style.perspective = "0px";
   switch (currentIndex) {
     case 2:
       descriptionBG.className =  'carousel-description-background-XCVB';
+      descriptionTX.className =  'carousel-description-text-XCVB';
       break;
     case 3:
       descriptionBG.className =  'carousel-description-background-KillProtocol';
+      descriptionTX.className =  'carousel-description-text-KillProtocol';
+      document.querySelector('.carousel-description-text').style.perspective = "200px";
       break;
     case 4:
       descriptionBG.className =  'carousel-description-background-MageHand';
+      descriptionTX.className =  'carousel-description-text-MageHand';
       break;
     case 5:
       descriptionBG.className =  'carousel-description-background-goblinknight';
+      descriptionTX.className =  'carousel-description-text-goblinknight';
       break;
     case 6:
       descriptionBG.className =  'carousel-description-background-WyrmCanyon';
+      descriptionTX.className =  'carousel-description-text-WyrmCanyon';
       break;
     case 7:
       descriptionBG.className =  'carousel-description-background-SHAHARAZON';
+      descriptionTX.className =  'carousel-description-text-SHAHARAZON';
       break;
     default:
       console.log("unexpected!");
@@ -228,7 +237,7 @@ function updateTitle() {
 
 function hideCaroDescription() {
   const background = document.querySelector('.carousel-description-background > div');
-   background.className = 'carousel-description-background-null';
+  background.className = 'carousel-description-background-null';
 }
 
 function expandCaroItem() {
