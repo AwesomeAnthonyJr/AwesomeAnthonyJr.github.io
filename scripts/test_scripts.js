@@ -178,32 +178,37 @@ function updateCaroDescription() {
   if (mobileView == 1) return;
   const descriptionBG = document.querySelector('.carousel-description-background > div');
   const descriptionTX = document.querySelector('.carousel-description-text > div');
-  document.querySelector('.carousel-description-text').style.perspective = "0px";
+  const descriptionCR = document.querySelector('.carousel-description-credit > div');
   switch (currentIndex) {
     case 2:
       descriptionBG.className =  'carousel-description-background-XCVB';
       descriptionTX.className =  'carousel-description-text-XCVB';
+      descriptionCR.className =  'carousel-description-credit-XCVB';
       break;
     case 3:
       descriptionBG.className =  'carousel-description-background-KillProtocol';
       descriptionTX.className =  'carousel-description-text-KillProtocol';
-      document.querySelector('.carousel-description-text').style.perspective = "200px";
+      descriptionCR.className =  'carousel-description-credit-KillProtocol';
       break;
     case 4:
       descriptionBG.className =  'carousel-description-background-MageHand';
       descriptionTX.className =  'carousel-description-text-MageHand';
+      descriptionCR.className =  'carousel-description-credit-MageHand';
       break;
     case 5:
       descriptionBG.className =  'carousel-description-background-goblinknight';
       descriptionTX.className =  'carousel-description-text-goblinknight';
+      descriptionCR.className =  'carousel-description-credit-goblinknight';
       break;
     case 6:
       descriptionBG.className =  'carousel-description-background-WyrmCanyon';
       descriptionTX.className =  'carousel-description-text-WyrmCanyon';
+      descriptionCR.className =  'carousel-description-credit-WyrmCanyon';
       break;
     case 7:
       descriptionBG.className =  'carousel-description-background-SHAHARAZON';
       descriptionTX.className =  'carousel-description-text-SHAHARAZON';
+      descriptionCR.className =  'carousel-description-credit-SHAHARAZON';
       break;
     default:
       console.log("unexpected!");
@@ -263,14 +268,19 @@ function updateRelease() {
 }
 
 function hideCaroDescription() {
-  const background = document.querySelector('.carousel-description-background > div');
-  background.className = 'carousel-description-background-null';
+  const descriptionBG = document.querySelector('.carousel-description-background > div');
+  const descriptionTX = document.querySelector('.carousel-description-text > div');
+  const descriptionCR = document.querySelector('.carousel-description-credit > div');
+  descriptionBG.className = 'carousel-description-background-null';
+  descriptionTX.className = 'carousel-description-text-null';
+  descriptionCR.className = 'carousel-description-credit-null';
 }
 
 async function expandCaroItem() {
   updateCaroImage();
   updateCaroDescription();
-  //console.log("expanded");
+  expanded = true;
+
   expandButton.style.transform = `scale(${1, 1})`;
   expandImage.style.display = "block";
   expandImage.style.opacity = "1";
@@ -288,7 +298,8 @@ async function expandCaroItem() {
 
 function unexpandCaroItem() {
   hideCaroDescription();
-  //console.log("un-expanded");
+  expanded = false;
+
   expandButton.style.transform = `scale(${0.86, 0.86})`;
   expandImage.style.opacity = "0";
   
@@ -311,7 +322,7 @@ async function type(item, text, timeout) {
   //title.textContent = "";
   console.log("the length is", text.length)
   let size = text.length;
-  for (i = 0; i < size; i++) {
+  for (i = 0; i < size && expanded; i++) {
     item.textContent += text.charAt(i);
     await sleep(timeout);
     console.log("A")
@@ -339,7 +350,7 @@ expandButton.addEventListener('click', () => {
   } else {
     expandCaroItem();
   }
-  expanded = !expanded;
+  //expanded = !expanded;
 });
 
 window.addEventListener('resize', () => {

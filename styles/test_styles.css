@@ -5,6 +5,8 @@
   --caro-width-large: 0;
   --caro-height-large: 0;
   --mobile-view: 0;
+  --desk-description-width: 200px;
+  --desk-description-height: 200px;
 }
 
 @media screen and (max-width:9999px) {
@@ -284,8 +286,8 @@ body {
 
 .carousel-describers-desk {
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: 50px;
+    left: 50px;
     z-index: 3;
     width: 100vw;
     height: var(--caro-height-large);
@@ -293,36 +295,46 @@ body {
 }
 
 .carousel-description-background {
-    width: 200px;
-    height: 200px;
+    width: var(--desk-description-width);
+    height: var(--desk-description-height);
     overflow: hidden;
-    z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
 }
 
 .carousel-description-text {
-    width: 200px;
-    height: 200px;
-    z-index: 4;
+    width: var(--desk-description-width);
+    height: var(--desk-description-height);
     position: absolute;
     top: 0;
     left: 0;
+    perspective: 0px;
+    z-index: 4;
 }
 
-    /*
-    not important for SHAHARAZON's effect
+.carousel-description-credit {
+    width: var(--desk-description-width);
+    height: var(--desk-description-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 0px;
+    z-index: 4;
+}
 
-.carousel-description-background-SHAHARAZON {
-   
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
+.carousel-description-credit:has(.carousel-description-credit-SHAHARAZON) {
     z-index: 3;
-    
 }
-    */
+
+.carousel-description-text:has(.carousel-description-text-KillProtocol) {
+    perspective: 400px;
+}
+
+.carousel-description-credit:has(.carousel-description-credit-KillProtocol) {
+    perspective: 400px;
+}
 
 .carousel-description-text-SHAHARAZON {
     width: 100%;
@@ -335,7 +347,6 @@ body {
     border-image-repeat: repeat;
     border-image-width: 9px 26px 4px 4px;
     image-rendering: pixelated;
-    z-index: 4;
     padding: 4px;
     position: absolute;
     top: -9px;
@@ -344,38 +355,120 @@ body {
     color: white;
 }
 
-
-    /*
-    not important for Kill Protocol's effect
-    
-.carousel-description-background-KillProtocol {
+.carousel-description-credit-SHAHARAZON {
     width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
-    */
-
-.carousel-description-text-KillProtocol {
-    width: 100%;
-    height: 100%;
-    transform: rotateY(-30deg);
-    transform-style: preserve-3d;
-    z-index: 4;
+    height: 80px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 9px 4px 4px 4px;
+    border-image-source: url('images/SHAHARAZON_border_image_1.png');
+    border-image-slice: 9 26 4 4;
+    border-image-repeat: repeat;
+    border-image-width: 9px 26px 4px 4px;
+    image-rendering: pixelated;
+    padding: 4px;
+    position: absolute;
+    top: -40px;
+    left: 60px;
+    background-color: #173ff9;
     color: white;
-    
+}
+
+.carousel-description-text-WyrmCanyon {
+    width: 100%;
+    height: 100%;
+    border: 16px solid transparent;
+    border-image: url('images/WyrmCanyon_border_image_1.png') 16 round;
+    background-clip: padding-box;
+    image-rendering: pixelated;
+    padding: 4px;
+    position: absolute;
+    background-color: #ff65c7;
+    color: black;
+}
+
+.carousel-description-credit-WyrmCanyon {
+    width: 50%;
+    height: 50%;
+    border: 16px solid transparent;
+    border-image: url('images/WyrmCanyon_border_image_2.png') 16 round;
+    background-clip: padding-box;
+    image-rendering: pixelated;
+    padding: 4px;
+    position: absolute;
+    background-color: #9f06b0;
+    color: white;
+    right: 8px;
+    bottom: 8px;
+}
+
+.carousel-description-background-goblinknight {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(black, #a08a12);
+    position: absolute;
+    opacity: 0.5;
+}
+
+.carousel-description-text-goblinknight {
+    width: calc(var(--desk-description-width) - 4px);
+    height: calc(var(--desk-description-height) - 4px);
+    border: 4px solid transparent;
+    border-image: url('images/goblinknight_border_image_1.png') 4 round;
+    position: absolute;
+    color: white;
+}
+
+.carousel-description-credit-goblinknight {
+    width: var(--desk-description-width);
+    height: 107px;
+    background-image: url('images/goblinknight_background_image_1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    color: black;
+    top: -50px;
+    line-height: 50px;
+    text-align: center;
 }
 
 .carousel-description-text-MageHand {
     width: 100%;
     height: 100%;
     border: 16px solid transparent;
-    border-image-source: url('images/SHAHARAZON_border_image_1.png');
     border-image: url('images/MageHand_border_image_1.png') 16 round;
     image-rendering: pixelated;
-    z-index: 4;
     position: absolute;
     background-color: black;
     color: white;
+}
+
+.carousel-description-credit-MageHand {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    text-align: right;
+    top: calc(var(--desk-description-height) - 4px);
+}
+
+.carousel-description-text-KillProtocol {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-30deg);
+    transform-style: preserve-3d;
+    color: white;
+    position: absolute
+}
+
+.carousel-description-credit-KillProtocol {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-30deg);
+    transform-style: preserve-3d;
+    color: white;
+    position: absolute;
+    top: -30px;
 }
 
 .carousel-description-background-XCVB {
@@ -392,9 +485,30 @@ body {
 }
 
 .carousel-description-text-XCVB {
-    width: 100%;
-    height: 100%;
+    width: calc(var(--desk-description-width) - 16px);
+    height: calc(var(--desk-description-height) - 16px);
+    border: 12px solid transparent;
+    border-image: url('images/XCVB_border_image_1.png') 12 round;
+    image-rendering: pixelated;
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
 }
+
+.carousel-description-credit-XCVB {
+    width: calc(var(--desk-description-width) - 4px);
+    height: 40px;
+    border: 2px solid transparent;
+    border-image: url('images/XCVB_border_image_2.png') 2 round;
+    image-rendering: pixelated;
+    position: absolute;
+    background-color: black;
+    color: #173ff9;
+    top: -50px;
+}
+
+
 
 @keyframes scrollXCVBBackground {
     0% {
@@ -407,6 +521,16 @@ body {
 }
 
 .carousel-description-background-null {
+    min-width: 0px;
+    min-height: 0px;
+}
+
+.carousel-description-text-null {
+    min-width: 0px;
+    min-height: 0px;
+}
+
+.carousel-description-credit-null {
     min-width: 0px;
     min-height: 0px;
 }
