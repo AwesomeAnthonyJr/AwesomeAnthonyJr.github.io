@@ -347,7 +347,7 @@ body {
     top: 0px;
     left: calc(var(--caro-width-large) + var(--caro-gap) + var(--caro-width)/2);
     z-index: 3;
-    width: 100vw;
+    width: 50vw;
     height: var(--caro-height-large);
     pointer-events: none;
 }
