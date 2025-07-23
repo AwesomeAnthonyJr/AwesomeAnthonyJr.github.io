@@ -26,6 +26,15 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'VCR';
+    src: url('fonts/VCROSDMono.woff2') format('woff2'),
+        url('fonts/VCROSDMono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 @media screen and (max-width:9999px) {
     :root {
         --caro-width: 360px;
@@ -376,8 +385,20 @@ body {
     z-index: 4;
 }
 
+.carousel-description-text:has(.carousel-description-text-SHAHARAZON) {
+    top: 70px;
+}
 .carousel-description-credit:has(.carousel-description-credit-SHAHARAZON) {
     z-index: 3;
+    top: 70px;
+}
+
+.carousel-description-text:has(.carousel-description-text-WyrmCanyon) {
+    top: 10px;
+}
+.carousel-description-credit:has(.carousel-description-credit-WyrmCanyon) {
+    top: 24px;
+    left: 12px;
 }
 
 .carousel-description-background:has(.carousel-description-background-goblinknight) {
@@ -449,8 +470,27 @@ body {
     top: -9px;
     left: -4px;
     background-color: #173ff9;
-    color: white;
 }
+
+.carousel-description-text-SHAHARAZON * {
+    color: white;
+    font-family: "VCR", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size));
+    pointer-events: all;
+    z-index: 5;
+    margin-top: 0px;
+}
+
+.carousel-description-text-SHAHARAZON * > a{
+    color: #e2383b;
+}
+
+.carousel-description-text-SHAHARAZON * > a:hover{
+    color: #44e537;
+}
+
 
 .carousel-description-credit-SHAHARAZON {
     width: 100%;
@@ -465,15 +505,32 @@ body {
     image-rendering: pixelated;
     padding: 4px;
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 60px;
-    background-color: #173ff9;
-    color: white;
+    background-color: white;
+}
+
+.carousel-description-credit-SHAHARAZON * {
+    color: black;
+    font-family: "VCR", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size));
+    pointer-events: all;
+    z-index: 5;
+    margin-top: calc(var(--desk-description-font-size) * -1 - 7px);
+}
+
+.carousel-description-credit-SHAHARAZON * > span{
+    color: #282828;
+    background-color: #e5e5e5;
+    border: 1px solid #b4b4b4;
+    border-bottom-width: 0;
 }
 
 .carousel-description-text-WyrmCanyon {
     width: 100%;
-    height: 100%;
+    height: 120%;
     border: 16px solid transparent;
     border-image: url('images/WyrmCanyon_border_image_1.png') 16 round;
     background-clip: padding-box;
@@ -481,12 +538,33 @@ body {
     padding: 4px;
     position: absolute;
     background-color: #ff65c7;
-    color: black;
+}
+
+.carousel-description-text-WyrmCanyon * {
+    color: #9f06b0;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size) * 0.9);
+    pointer-events: all;
+    z-index: 5;
+    margin-top: calc(var(--desk-description-font-size) * 1.5 + 28px);
+}
+
+.carousel-description-text-WyrmCanyon * > a{
+    background-color: #9f06b0;
+    color: #ff65c7;
+    text-decoration: none;
+}
+
+.carousel-description-text-WyrmCanyon * > a:hover{
+    text-decoration: underline;
 }
 
 .carousel-description-credit-WyrmCanyon {
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: calc(var(--desk-description-font-size) * 1.5);
     border: 16px solid transparent;
     border-image: url('images/WyrmCanyon_border_image_2.png') 16 round;
     background-clip: padding-box;
@@ -494,9 +572,22 @@ body {
     padding: 4px;
     position: absolute;
     background-color: #9f06b0;
-    color: white;
-    right: 8px;
-    bottom: 8px;
+}
+
+.carousel-description-credit-WyrmCanyon * {
+    color: #ff65c7;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size) * 0.9);
+    pointer-events: all;
+    z-index: 5;
+    margin-top: -10px;
+}
+
+.carousel-description-credit-WyrmCanyon * > span{
+    font-size: calc(var(--desk-description-font-size) * 0.45);
 }
 
 .carousel-description-background-goblinknight {
@@ -520,12 +611,19 @@ body {
 .carousel-description-text-goblinknight * {
     color: white;
     font-family: "Lato", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     font-size: var(--desk-description-font-size);
     pointer-events: all;
     text-align: center;
     z-index: 5;
+    margin-top: 0px;
+}
+
+.carousel-description-text-goblinknight * > a{
+    color: black;
+    text-shadow: -1px 0 #38dadd, 0 1px #38dadd, 1px 0 #38dadd, 0 -1px #38dadd;
+    text-decoration: none;
 }
 
 .carousel-description-credit-goblinknight {
@@ -651,6 +749,11 @@ body {
     z-index: 5;
 }
 
+.carousel-description-text-MageHand * > a {
+    color: #38dadd;
+    text-shadow: 0 0 6px #38dadd;
+}
+
 .carousel-description-credit-MageHand {
     width: 90%;
     height: 110%;
@@ -699,6 +802,17 @@ body {
 
 .carousel-description-text-KillProtocol * > span:hover{
     background-color: black;
+}
+
+.carousel-description-text-KillProtocol * > a{
+    text-decoration: underline;
+}
+
+.carousel-description-text-KillProtocol * > a:hover{
+    background-color: white;
+    color: black;
+    z-index: 6;
+    text-decoration: none;
 }
 
 .carousel-description-credit-KillProtocol {
@@ -764,6 +878,11 @@ body {
     margin-top: -6px;
     pointer-events: all;
 }
+
+.carousel-description-text-XCVB * > a{
+    color: #0019cd
+}
+
 
 .carousel-description-credit-XCVB {
     width: calc(var(--desk-description-width) -4px);

@@ -196,7 +196,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-KillProtocol';
       descriptionCR.className =  'carousel-description-credit-KillProtocol';
 
-      descriptionTX.innerHTML = `<p><span>Kill Protocol is a unique two-color shooter created originally for 1-BIT JAM #4. Set in a future where clones are easily accessible, lives have little meaning, you must pay back $4500 of debt to regain your freedom, and taking assasination jobs to do so. If you have good credit you can spend some on the black market to enhance your loadout. All guns in this dystopian future are linked to ID codes, and can be morphed into others, while reloading directly charges your (in game) bank account. Kill Protocol can be played with a free download from it's <a href="https://leaflight-studios.itch.io/kill-protocol">itch.io</a> page, or <a href="https://leaflight-studios.itch.io/">learn more about it here.</a></span></p>`;
+      descriptionTX.innerHTML = `<p><span>Kill Protocol is a unique two-color shooter created originally for 1-BIT JAM #4. Set in a future where clones are easily accessible, lives have little meaning, you must pay back $4500 of debt to regain your freedom, and taking assasination jobs to do so. If you have good credit you can spend some on the black market to enhance your loadout. All guns in this dystopian future are linked to ID codes, and can be morphed into others, while reloading directly charges your (in game) bank account. Kill Protocol can be played with a free download from it's<a href="https://leaflight-studios.itch.io/kill-protocol"> itch.io </a>page, or<a href="https://leaflight-studios.itch.io/"> learn more about it here.</a></span></p>`;
       descriptionCR.innerHTML = `<p><span>Created By: <br> Anthony D. Salsbury, Jonathan Schultz, <br> Justin Grant, George Dietritch, <br> Owen Hickman, & Samuel Radulski</span></p>`
       
       
@@ -215,18 +215,25 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-goblinknight';
       descriptionCR.className =  'carousel-description-credit-goblinknight';
 
-      descriptionTX.innerHTML = `<p>goblin knight is an experimental 1st person sword fighting game initially created for the Game Idea Jam 2024. Due to it's short development time it's extremely janky and not very good, but displays an interesting idea with it's aiming-based melee combat. You can download it for free from it's <a href="https://leaflight-studios.itch.io/goblin-knight">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>goblin knight is an experimental 1st person sword fighting game initially created for the Game Idea Jam 2024. Play as an explorer who has gone too deep in the dark, meeting the goblin knight. It displays an interesting idea with it's aiming-based melee combat. You can download goblin knight for free from it's <a href="https://leaflight-studios.itch.io/goblin-knight">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p>created by: anthony d. salsbury</p>`;
       break;
     case 6:
       descriptionBG.className =  'carousel-description-background-WyrmCanyon';
       descriptionTX.className =  'carousel-description-text-WyrmCanyon';
       descriptionCR.className =  'carousel-description-credit-WyrmCanyon';
+
+      descriptionTX.innerHTML = `<p>Wyrm Canyon on the Pink and Purple Planet is an arcade-style, two-color game originally made for 1-BIT JAM #3. Pilot your sand tank with a unique control scheme and use it's compass to locate the Wyrms of the canyon, all before striking with your smylsknife on foot. If Pink and Purple isn't your style then you can pick a different color palette in the settings as well. You can play it for free directly from Wyrm Canyon's <a href="https://leaflight-studios.itch.io/wyrm-canyon">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionCR.innerHTML = `<p><span>Created By:</span><br> Anthony D. Salsbury</p>`;
       break;
     case 7:
       descriptionBG.className =  'carousel-description-background-SHAHARAZON';
       descriptionTX.className =  'carousel-description-text-SHAHARAZON';
       descriptionCR.className =  'carousel-description-credit-SHAHARAZON';
+
+      descriptionTX.innerHTML = `<p>SHAHARAZON is a first person "grenadier" set in the dark future of 2424, originally created for Acerola Jam 0. Play through a simulation of the war of the future as a cyborg super-soldier, trained for combat in grenade-only situations. You can play SHAHARAZON for free by downloading it from it's <a href="https://leaflight-studios.itch.io/agj0project">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionCR.innerHTML = `<p><span>created_by:</span> <br> ANTHONY D. SALSBURY</p>`;
+
       break;
     default:
       console.log("unexpected!");  
