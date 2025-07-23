@@ -206,7 +206,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-MageHand';
       descriptionCR.className =  'carousel-description-credit-MageHand';
 
-      descriptionTX.innerHTML = `<p><span>Mage Hand is a knowledge-based exploration game originally created for Pirate Software Game Jam #15. You are a magician who has lost your memory, but retained your ability to cast spells via different hand signs. Explore out of the prison tower and find your way out of the mansion, with secret routes and legendary wizards, reclaim your memory and master some of the 40 different spells to defeat your captor and set yourself free. You can play Mage Hand for free directly from it's <a href="https://leaflight-studios.itch.io/mage-hand">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>Mage Hand is a knowledge-based exploration game originally created for Pirate Software Game Jam #15. You are a magician who has lost your memory, but retained your ability to cast spells via different hand signs. Explore out of the prison tower and find your way out of the mansion, with secret routes and legendary wizards, reclaim your memory and master some of the 40 different spells to defeat your captor and set yourself free. You can play Mage Hand for free directly from it's <a href="https://leaflight-studios.itch.io/mage-hand">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p>Created By: Anthony D. Salsbury, <br> Josh "BB" Bang, Willow Bradshaw</p>`;
 
       break;
@@ -214,6 +214,9 @@ function updateCaroDescription() {
       descriptionBG.className =  'carousel-description-background-goblinknight';
       descriptionTX.className =  'carousel-description-text-goblinknight';
       descriptionCR.className =  'carousel-description-credit-goblinknight';
+
+      descriptionTX.innerHTML = `<p>goblin knight is an experimental 1st person sword fighting game initially created for the Game Idea Jam 2024. Due to it's short development time it's extremely janky and not very good, but displays an interesting idea with it's aiming-based melee combat. You can download it for free from it's <a href="https://leaflight-studios.itch.io/goblin-knight">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionCR.innerHTML = `<p>created by: anthony d. salsbury</p>`;
       break;
     case 6:
       descriptionBG.className =  'carousel-description-background-WyrmCanyon';

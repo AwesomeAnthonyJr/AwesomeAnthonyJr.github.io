@@ -12,9 +12,18 @@
 
 @font-face {
   font-family: 'DescriptionProtocol';
-  src: url('/fonts/DescriptionProtocol.ttf') format('truetype');
+  src: url('fonts/DescriptionProtocol.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+    font-family: 'PrinceValiant';
+    src: url('fonts/PrinceValiant.woff2') format('woff2'),
+        url('fonts/PrinceValiant.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @media screen and (max-width:9999px) {
@@ -371,6 +380,20 @@ body {
     z-index: 3;
 }
 
+.carousel-description-background:has(.carousel-description-background-goblinknight) {
+    overflow: visible;
+    top: 160px;
+    left: -15px;
+}
+.carousel-description-text:has(.carousel-description-text-goblinknight) {
+    top: 160px;
+    left: -15px;
+}
+.carousel-description-credit:has(.carousel-description-credit-goblinknight) {
+    top: 190px;
+    z-index: 2;
+}
+
 .carousel-description-background:has(.carousel-description-background-MageHand) {
     overflow: visible;
     top: 10px;
@@ -387,13 +410,14 @@ body {
 
 .carousel-description-text:has(.carousel-description-text-KillProtocol) {
     perspective: 400px;
-    top: 110px;
+    top: 130px;
     left: -10px;
 }
 .carousel-description-credit:has(.carousel-description-credit-KillProtocol) {
     perspective: 400px;
     height: calc(140px + var(--desk-description-height));
     left: -10px;
+    top: 10px
 }
 
 .carousel-description-background:has(.carousel-description-background-XCVB) {
@@ -476,33 +500,108 @@ body {
 }
 
 .carousel-description-background-goblinknight {
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 60%;
     background-image: linear-gradient(black, #a08a12);
     position: absolute;
     opacity: 0.5;
 }
 
 .carousel-description-text-goblinknight {
-    width: calc(var(--desk-description-width) - 4px);
-    height: calc(var(--desk-description-height) - 4px);
+    width: calc(1.2 * var(--desk-description-width) - 4px);
+    height: calc(0.6 * var(--desk-description-height) - 4px);
     border: 4px solid transparent;
     border-image: url('images/goblinknight_border_image_1.png') 4 round;
-    position: absolute;
+    position: relative;
+    left: -2px;
+    top: -2px;
+}
+
+.carousel-description-text-goblinknight * {
     color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--desk-description-font-size);
+    pointer-events: all;
+    text-align: center;
+    z-index: 5;
 }
 
 .carousel-description-credit-goblinknight {
-    width: var(--desk-description-width);
+    width: 448px;
     height: 107px;
     background-image: url('images/goblinknight_background_image_1.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
+    transform: rotate(90deg);
+    left: 10px;
+}
+
+.carousel-description-credit-goblinknight * {
     color: black;
-    top: -50px;
-    line-height: 50px;
+    text-shadow: -2px 0 #e2383b, 0 2px #e2383b, 2px 0 #e2383b, 0 -2px #e2383b;
+    font-family: "PrinceValiant", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size) * 1.5);
+    pointer-events: all;
     text-align: center;
+    z-index: 5;
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -100px;
+}
+
+@media screen and (max-width:1720px) {
+    .carousel-description-credit-goblinknight {
+        left: 10px;
+    }
+
+    .carousel-description-credit-goblinknight *{
+        left: -100px;
+    }
+}
+
+@media screen and (max-width:1520px) {
+    .carousel-description-credit-goblinknight {
+        left: -30px;
+    }
+
+    .carousel-description-credit-goblinknight *{
+        left: -65px;
+    }
+}
+
+@media screen and (max-width:1320px) {
+    .carousel-description-credit-goblinknight {
+        left: -90px;
+    }
+
+    .carousel-description-credit-goblinknight *{
+        left: -45px;
+    }
+}
+
+@media screen and (max-width:1100px) {
+   .carousel-description-credit-goblinknight {
+        left: -90px;
+    }
+
+    .carousel-description-credit-goblinknight *{
+        left: -30px;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .carousel-description-credit-goblinknight {
+        left: -120px;
+    }
+
+    .carousel-description-credit-goblinknight *{
+        left: -15px;
+    }
 }
 
 .carousel-description-background-MageHand {
@@ -511,7 +610,6 @@ body {
     background-image: url('images/MageHand_background_450_420.png');
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 3;
     position: absolute;
     left: -40px;
     top: 0px;
@@ -539,6 +637,7 @@ body {
     position: absolute;
     background-color: black;
     color: white;
+    
 }
 
 .carousel-description-text-MageHand * {
@@ -549,6 +648,7 @@ body {
     font-style: normal;
     font-size: var(--desk-description-font-size);
     pointer-events: all;
+    z-index: 5;
 }
 
 .carousel-description-credit-MageHand {
@@ -557,6 +657,7 @@ body {
     position: absolute;
     top: calc(1.1 * var(--desk-description-height) - 24px);
     right: 24px;
+    
 }
 
 .carousel-description-credit-MageHand * {
@@ -568,6 +669,7 @@ body {
     pointer-events: all;
     color: #b4b4b4;
     text-align: right;
+    z-index: 5;
 }
 
 .carousel-description-text-KillProtocol {
