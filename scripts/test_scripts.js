@@ -41,7 +41,7 @@ function getSlideWidth() {
 
 function updatePosition() {
   const slideWidth = getSlideWidth();
-  if (mobileView == 1){
+  if (parseInt(window.innerWidth) <= 600){
     track.style.transform = `translateX(-${currentIndex * (slideWidth) - caro_offset - true_caro_gap/2}px)`; 
   } else {
     track.style.transform = `translateX(-${currentIndex * (slideWidth + true_caro_gap) - caro_offset - true_caro_gap/2}px)`; 
@@ -179,21 +179,36 @@ function updateCaroDescription() {
   const descriptionBG = document.querySelector('.carousel-description-background > div');
   const descriptionTX = document.querySelector('.carousel-description-text > div');
   const descriptionCR = document.querySelector('.carousel-description-credit > div');
+
+  descriptionTX.innerHTML = '';
+  descriptionCR.innerHTML = '';
   switch (currentIndex) {
     case 2:
       descriptionBG.className =  'carousel-description-background-XCVB';
       descriptionTX.className =  'carousel-description-text-XCVB';
       descriptionCR.className =  'carousel-description-credit-XCVB';
+      
+      descriptionTX.innerHTML = `<p>XCVB is a roguelike deckbuilder / 2D platformer mashup originally created in for Untitled Game Jam #110. You play as a lone gambler with a deck of magical cards who ascend's Starface's tower in order to reclaim the $5 they are owed. Featuring 16 different movement cards (for active abilities), and 24 different badges (for passive perks), There are countless combinations to discover. The enemies in the tower get stronger as you climb, but on your own terms, as you get to decide if they become faster or stronger each floor. You can play XCVB for free today on it's <a href="https://leaflight-studios.itch.io/xcvb">itch.io</a> page, or <a href="https://leaflight-studios.itch.io/">learn more about it here.</a></p>`;
+      descriptionCR.innerHTML = `<p>Created By: Anthony D. Salsbury,<br> Owen Hickman, & Samuel Radulski</p>`
       break;
     case 3:
       descriptionBG.className =  'carousel-description-background-KillProtocol';
       descriptionTX.className =  'carousel-description-text-KillProtocol';
       descriptionCR.className =  'carousel-description-credit-KillProtocol';
+
+      descriptionTX.innerHTML = `<p><span>Kill Protocol is a unique two-color shooter created originally for 1-BIT JAM #4. Set in a future where clones are easily accessible, lives have little meaning, you must pay back $4500 of debt to regain your freedom, and taking assasination jobs to do so. If you have good credit you can spend some on the black market to enhance your loadout. All guns in this dystopian future are linked to ID codes, and can be morphed into others, while reloading directly charges your (in game) bank account. Kill Protocol can be played with a free download from it's <a href="https://leaflight-studios.itch.io/kill-protocol">itch.io</a> page, or <a href="https://leaflight-studios.itch.io/">learn more about it here.</a></span></p>`;
+      descriptionCR.innerHTML = `<p><span>Created By: <br> Anthony D. Salsbury, Jonathan Schultz, <br> Justin Grant, George Dietritch, <br> Owen Hickman, & Samuel Radulski</span></p>`
+      
+      
       break;
     case 4:
       descriptionBG.className =  'carousel-description-background-MageHand';
       descriptionTX.className =  'carousel-description-text-MageHand';
       descriptionCR.className =  'carousel-description-credit-MageHand';
+
+      descriptionTX.innerHTML = `<p><span>Mage Hand is a knowledge-based exploration game originally created for Pirate Software Game Jam #15. You are a magician who has lost your memory, but retained your ability to cast spells via different hand signs. Explore out of the prison tower and find your way out of the mansion, with secret routes and legendary wizards, reclaim your memory and master some of the 40 different spells to defeat your captor and set yourself free. You can play Mage Hand for free directly from it's <a href="https://leaflight-studios.itch.io/mage-hand">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionCR.innerHTML = `<p>Created By: Anthony D. Salsbury, <br> Josh "BB" Bang, Willow Bradshaw</p>`;
+
       break;
     case 5:
       descriptionBG.className =  'carousel-description-background-goblinknight';
@@ -211,7 +226,7 @@ function updateCaroDescription() {
       descriptionCR.className =  'carousel-description-credit-SHAHARAZON';
       break;
     default:
-      console.log("unexpected!");
+      console.log("unexpected!");  
   }
 }
 
