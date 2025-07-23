@@ -621,9 +621,11 @@ body {
 }
 
 .carousel-description-text-goblinknight * > a{
-    color: black;
+    color: #38dadd;
+    /*
     text-shadow: -1px 0 #38dadd, 0 1px #38dadd, 1px 0 #38dadd, 0 -1px #38dadd;
     text-decoration: none;
+    */
 }
 
 .carousel-description-credit-goblinknight {
