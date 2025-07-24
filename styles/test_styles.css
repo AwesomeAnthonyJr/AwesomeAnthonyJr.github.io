@@ -8,6 +8,7 @@
   --desk-description-width: 450px;
   --desk-description-height: 420px;
   --desk-description-font-size: 24px;
+  --caro-title-font-size: 80px;
 }
 
 @font-face {
@@ -316,6 +317,7 @@ body {
     --desk-description-width: 450px;
     --desk-description-height: 420px;
     --desk-description-font-size: 24px;
+    --caro-title-font-size: 70px;
     }
 }
 
@@ -324,6 +326,7 @@ body {
     --desk-description-width: 350px;
     --desk-description-height: 420px;
     --desk-description-font-size: 20px;
+    --caro-title-font-size: 58px;
     }
 }
 
@@ -332,6 +335,7 @@ body {
     --desk-description-width: 250px;
     --desk-description-height: 420px;
     --desk-description-font-size: 18px;
+    --caro-title-font-size: 46px;
     }
 }
 
@@ -340,6 +344,7 @@ body {
     --desk-description-width: 250px;
     --desk-description-height: 360px;
     --desk-description-font-size: 16px;
+    --caro-title-font-size: 40px;
     }
 }
 
@@ -348,6 +353,7 @@ body {
     --desk-description-width: 200px;
     --desk-description-height: 360px;
     --desk-description-font-size: 14px;
+    --caro-title-font-size: 36px;
     }
 }
 
@@ -940,6 +946,69 @@ body {
     display: none;
 }
 
+.carousel-description-mobile {
+    width: 90%;
+    height: 0;
+    transition: height 0.2s ease-in-out;
+    overflow: hidden;
+    border: 0px solid transparent;
+    border-image: url('images/goblinknight_border_image_1.png') 4 round;
+    image-rendering: pixelated;
+    background-color: #232323;
+    background-clip: padding-box;
+    margin: auto;
+}
+
+.carousel-description-mobile * > h2 {
+    padding-left: 16px;
+    color: white;
+    font-family: "Prompt", sans-serif;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700px;
+    margin: 0;
+    text-shadow:
+    1px 1px 0 #44e537,
+    2px 2px  0 #fad019,
+    3px 3px  0 #38dadd,
+    4px 4px  0 #dd3894,
+    5px 5px  0 #ec813b,
+    6px 6px  0 #3d5ed2,
+    7px 7px  0 #e2383b;
+}
+
+.carousel-description-mobile * > h3 {
+    padding-left: 16px;
+    color: white;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700px;
+    margin-bottom: 0;
+    margin: 0;
+}
+
+.carousel-description-mobile * > p {
+    padding: 16px;
+    color: white;
+    font-family: "Prompt", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400px;
+    margin: 0;
+}
+
+.carousel-description-mobile * * > a{
+    color: #3d5ed2;
+    text-decoration: none;
+    
+}
+
+.carousel-description-mobile * * > a:hover{
+    text-decoration: underline;
+    
+}
+
 .darkeners {
     display: none;
     position: absolute;
@@ -985,11 +1054,11 @@ body {
 
 .carousel-title {
     position: absolute;
-    left: 80px;
-    bottom: 30px;
+    left: 20px;
+    bottom: 20px;
     margin: 0;
     z-index: 3;
-    font-size: 4rem;
+    font-size: var(--caro-title-font-size);
     color: white;
     display: none;
     font-family: "Prompt", sans-serif;
@@ -999,11 +1068,11 @@ body {
 
 .carousel-release {
     position: absolute;
-    left: 80px;
-    bottom: 120px;
+    left: 20px;
+    bottom: calc(20px + var(--caro-title-font-size) + 20px);
     margin: 0;
     z-index: 3;
-    font-size: 2rem;
+    font-size: calc(var(--caro-title-font-size) / 2);
     color: white;
     display: none;
     font-family: "Prompt", sans-serif;
