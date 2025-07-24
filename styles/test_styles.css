@@ -947,7 +947,7 @@ body {
 }
 
 .carousel-description-mobile {
-    width: 90%;
+    width: 95%;
     height: 0;
     transition: height 0.2s ease-in-out;
     overflow: hidden;
@@ -967,6 +967,7 @@ body {
     font-style: normal;
     font-weight: 700px;
     margin: 0;
+    /*
     text-shadow:
     1px 1px 0 #44e537,
     2px 2px  0 #fad019,
@@ -975,6 +976,7 @@ body {
     5px 5px  0 #ec813b,
     6px 6px  0 #3d5ed2,
     7px 7px  0 #e2383b;
+    */
 }
 
 .carousel-description-mobile * > h3 {

@@ -395,7 +395,7 @@ async function updateMobileDescription() {
       console.log("unexpected!");  
   }
 
-  await sleep(10);
+  await sleep(20);
   descriptionBoss.style.height = description.scrollHeight + 30 + 'px';
   descriptionBoss.style.borderWidth = "4px";
 }
