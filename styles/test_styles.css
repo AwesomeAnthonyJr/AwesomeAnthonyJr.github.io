@@ -1197,9 +1197,11 @@ body {
     font-family: "Prompt", sans-serif;
     font-weight: 700;
     color: black;
+    background-color: white;
     text-align: center;
-    position: absolute;
-    bottom: 0px;
+    /*position: absolute;
+    bottom: 100px;
+    */
     z-index: 1;
     width: 100%;
     margin: 0;
@@ -1395,8 +1397,8 @@ body {
 .carousel-header {
     width: 100vw;
     background-color: #38dadd;
-    border-top: 20px solid black;
-    border-bottom: 20px solid black;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
 }
 
 .carousel-header > h1 {
