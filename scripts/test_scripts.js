@@ -395,9 +395,14 @@ async function updateMobileDescription() {
       console.log("unexpected!");  
   }
 
-  await sleep(20);
+  //gotta do some nonsense here to make it the right height
   descriptionBoss.style.height = description.scrollHeight + 30 + 'px';
   descriptionBoss.style.borderWidth = "4px";
+  await sleep(10);
+  descriptionBoss.addEventListener('transitionend', () => {
+    //console.log("LOADED MOBILE EXPAND!")
+    descriptionBoss.style.height = description.scrollHeight + 30 + 'px';
+  }, { once: true });
 }
 
 function hideMobileDescription() {

@@ -963,7 +963,7 @@ body {
     padding-left: 16px;
     color: white;
     font-family: "Prompt", sans-serif;
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 700px;
     margin: 0;
@@ -983,7 +983,7 @@ body {
     padding-left: 16px;
     color: white;
     font-family: "Prompt", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700px;
     margin-bottom: 0;
@@ -994,7 +994,7 @@ body {
     padding: 16px;
     color: white;
     font-family: "Prompt", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400px;
     margin: 0;
@@ -1080,4 +1080,132 @@ body {
     font-family: "Prompt", sans-serif;
     font-weight: 700;
     font-style: normal;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100vw;
+    z-index: 10;
+}
+
+
+.logo {
+    background-image: url('images/LLSLogo23NoText(1).svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.super-header {
+    background-color: black;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 100vw;
+    z-index: 11;
+}
+
+.super-header > div {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 980px;
+}
+
+.super-header-buttons {
+    z-index: 11;
+    height: 20px;
+}
+
+.super-header-menus {
+    z-index: 10;
+    background-color: transparent;
+    align-items: flex-start;
+}
+
+@media screen and (max-width:980px) {
+    .super-header > div {
+        width: 100vw;
+    }
+}
+
+.super-header-buttons > button {
+    height: 100%;
+    border: none;
+    flex: 1;
+/*    transition: background-color 0.2s ease-in;
+}
+
+.super-header-buttons > button:hover {
+    background-color: white;*/
+}
+
+.header-g {
+    background-color: #44e537;
+}
+.header-y {
+    background-color: #fad019;
+}
+.header-c {
+    background-color: #38dadd;
+}
+.header-m {
+    background-color: #dd3894;
+}
+.header-o {
+    background-color: #ec813b;
+}
+.header-b {
+    background-color: #3d5ed2;
+}
+.header-r {
+    background-color: #e2383b;
+}
+
+.super-header-menus > ul{
+    top: 20px;
+    flex: 1;
+    list-style: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow: hidden;
+}
+
+.super-header-menus > ul > li{
+    height: 20px;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+.menu-g {
+    background-color: #44e537;
+}
+.menu-y {
+    background-color: #fad019;
+}
+.menu-c {
+    background-color: #38dadd;
+}
+.menu-m {
+    background-color: #dd3894;
+}
+.menu-o {
+    background-color: #ec813b;
+}
+.menu-b {
+    background-color: #3d5ed2;
+}
+.menu-r {
+    background-color: #e2383b;
 }
