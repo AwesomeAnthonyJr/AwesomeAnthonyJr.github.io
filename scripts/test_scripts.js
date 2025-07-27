@@ -11,14 +11,11 @@ const darkeners = document.querySelector('.darkeners');
 const title = document.querySelector('.carousel-title');
 const release = document.querySelector('.carousel-release');
 
-let caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
-let mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
-
-//console.log(caroGap);
-
-let expanded = false;
-let mobileExpanded = false;
-let currentIndex = 2;
+let caro_width = getComputedStyle(root).getPropertyValue('--caro-width').trim();
+let mobile_view = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
+let caro_expanded = false;
+let mobile_caro_expanded = false;
+let caro_index = 2;
 let true_caro_gap = 0;
 let caro_offset = window.innerWidth * 0.25;
 
@@ -44,16 +41,16 @@ function getSlideWidth() {
 function updatePosition() {
   const slideWidth = getSlideWidth();
   if (parseInt(window.innerWidth) <= 600){
-    track.style.transform = `translateX(-${currentIndex * (slideWidth) - caro_offset - true_caro_gap/2}px)`; 
+    track.style.transform = `translateX(-${caro_index * (slideWidth) - caro_offset - true_caro_gap/2}px)`; 
   } else {
-    track.style.transform = `translateX(-${currentIndex * (slideWidth + true_caro_gap) - caro_offset - true_caro_gap/2}px)`; 
+    track.style.transform = `translateX(-${caro_index * (slideWidth + true_caro_gap) - caro_offset - true_caro_gap/2}px)`; 
   }
   
 }
 
 function snapTo(index) {
   track.style.transition = 'none';
-  currentIndex = index;
+  caro_index = index;
   updatePosition();
 
   void track.offsetWidth;
@@ -61,17 +58,17 @@ function snapTo(index) {
 }
 
 function updateTrueGap() {
-  caroWidth = getComputedStyle(root).getPropertyValue('--caro-width').trim();
-  mobileView = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
-  true_caro_gap = (window.innerWidth - (2 * parseInt(caroWidth)))/2;
+  caro_width = getComputedStyle(root).getPropertyValue('--caro-width').trim();
+  mobile_view = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
+  true_caro_gap = (window.innerWidth - (2 * parseInt(caro_width)))/2;
   document.documentElement.style.setProperty('--caro-gap', `${true_caro_gap}px`);
 }
 
 function carouselPrev() {
-  currentIndex--;
+  caro_index--;
   updatePosition();
 
-  if (mobileExpanded){
+  if (mobile_caro_expanded){
     unexpandMobileDesc();
   }
 
@@ -82,17 +79,17 @@ function carouselPrev() {
   }, { once: true });
 
   track.addEventListener('transitionend', () => {
-    if (currentIndex < 2) {
+    if (caro_index < 2) {
       snapTo((items.length - 1) + 2);
     }
   }, { once: true });
 }
 
 function carouselNext() {
-  currentIndex++;
+  caro_index++;
   updatePosition();
   
-  if (mobileExpanded){
+  if (mobile_caro_expanded){
     unexpandMobileDesc();
   }
 
@@ -103,7 +100,7 @@ function carouselNext() {
   }, { once: true });
 
   track.addEventListener('transitionend', () => {
-    if (currentIndex > (items.length - 1) + 2) {
+    if (caro_index > (items.length - 1) + 2) {
       snapTo(2);
     }
   }, { once: true });
@@ -112,14 +109,14 @@ function carouselNext() {
 
 function updateCaroImage() {
   let url_ender = "300_400.png"
-  if (mobileView == 0) {
-    if (parseInt(caroWidth) == 300) {
+  if (mobile_view == 0) {
+    if (parseInt(caro_width) == 300) {
       url_ender = "360_480.png"
     } else {
       url_ender = "420_560.png"
     }
   }
-  switch (currentIndex) {
+  switch (caro_index) {
     case 2:
       console.log("XCVB");
       expandImage.style.backgroundImage = "url(" + "styles/images/XCVB_display_" + url_ender + ")";
@@ -150,9 +147,9 @@ function updateCaroImage() {
 }
 
 function updateCaroBackground() {
-  if (mobileView == 1) return;
+  if (mobile_view == 1) return;
   const background = document.querySelector('.carousel-background');
-  switch (currentIndex) {
+  switch (caro_index) {
     case 1:
       //match case 7!
       background.style.backgroundImage = "url(styles/images/SHAHARAZON_background.png)";
@@ -185,14 +182,14 @@ function updateCaroBackground() {
 }
 
 function updateCaroDescription() {
-  if (mobileView == 1) return;
+  if (mobile_view == 1) return;
   const descriptionBG = document.querySelector('.carousel-description-background > div');
   const descriptionTX = document.querySelector('.carousel-description-text > div');
   const descriptionCR = document.querySelector('.carousel-description-credit > div');
 
   descriptionTX.innerHTML = '';
   descriptionCR.innerHTML = '';
-  switch (currentIndex) {
+  switch (caro_index) {
     case 2:
       descriptionBG.className =  'carousel-description-background-XCVB';
       descriptionTX.className =  'carousel-description-text-XCVB';
@@ -251,8 +248,8 @@ function updateCaroDescription() {
 }
 
 async function updateTitle() {
-  if (mobileView == 1) return;
-  switch (currentIndex) {
+  if (mobile_view == 1) return;
+  switch (caro_index) {
     case 2:
       await type(title, "XCVB", 20);
       break;
@@ -277,8 +274,8 @@ async function updateTitle() {
 }
 
 function updateRelease() {
-  if (mobileView == 1) return;
-  switch (currentIndex) {
+  if (mobile_view == 1) return;
+  switch (caro_index) {
     case 2:
       type(release, "May 25th 2025", 20);
       break;
@@ -314,7 +311,7 @@ function hideCaroDescription() {
 async function expandCaroItem() {
   updateCaroImage();
   updateCaroDescription();
-  expanded = true;
+  caro_expanded = true;
 
   expandButton.style.transform = `scale(${1, 1})`;
   expandImage.style.display = "block";
@@ -333,7 +330,7 @@ async function expandCaroItem() {
 
 function unexpandCaroItem() {
   hideCaroDescription();
-  expanded = false;
+  caro_expanded = false;
 
   expandButton.style.transform = `scale(${0.86, 0.86})`;
   expandImage.style.opacity = "0";
@@ -355,7 +352,7 @@ async function type(item, text, timeout) {
   //title.textContent = "";
   console.log("the length is", text.length)
   let size = text.length;
-  for (i = 0; i < size && expanded; i++) {
+  for (i = 0; i < size && caro_expanded; i++) {
     item.textContent += text.charAt(i);
     await sleep(timeout);
     console.log("A")
@@ -367,12 +364,12 @@ function sleep(ms) {
 }
 
 async function updateMobileDescription() {
-  if (mobileView == 0) return;
+  if (mobile_view == 0) return;
   const descriptionBoss = document.querySelector('.carousel-description-mobile');
   const description = document.querySelector('.carousel-description-mobile > div');
 
   description.innerHTML = '';
-  switch (currentIndex) {
+  switch (caro_index) {
     case 2:
       description.innerHTML = `<h2>XCVB</h2> <h3>May 25th 2025</h3> <br> <p>XCVB is a roguelike deckbuilder / 2D platformer mashup originally created in for Untitled Game Jam #110. You play as a lone gambler with a deck of magical cards who ascend's Starface's tower in order to reclaim the $5 they are owed. Featuring 16 different movement cards (for active abilities), and 24 different badges (for passive perks), There are countless combinations to discover. The enemies in the tower get stronger as you climb, but on your own terms, as you get to decide if they become faster or stronger each floor. You can play XCVB for free today on it's <a href="https://leaflight-studios.itch.io/xcvb">itch.io</a> page, or <a href="https://leaflight-studios.itch.io/">learn more about it here.</a></p> <br> <h3>Created By: Anthony D. Salsbury, Owen Hickman, & Samuel Radulski</h3>`;
       break;
@@ -416,37 +413,37 @@ function hideMobileDescription() {
 
 function expandMobileDesc() {
   updateMobileDescription();
-  mobileExpanded = true;
+  mobile_caro_expanded = true;
 }
 
 function unexpandMobileDesc() {
   hideMobileDescription();
-  mobileExpanded = false;
+  mobile_caro_expanded = false;
 }
 
 prevButton.addEventListener('click', () => {
-  if (currentIndex < 1) return;
+  if (caro_index < 1) return;
   carouselPrev();
 });
 
 nextButton.addEventListener('click', () => {
-  if (currentIndex > items.length + 1) return;
+  if (caro_index > items.length + 1) return;
   carouselNext();
 });
 
 expandButton.addEventListener('click', () => {
-  if (mobileView == 1) return;
-  if (expanded){
+  if (mobile_view == 1) return;
+  if (caro_expanded){
     unexpandCaroItem();
   } else {
     expandCaroItem();
   }
-  //expanded = !expanded;
+  //caro_expanded = !caro_expanded;
 });
 
 mobileExpandButton.addEventListener('click', () => {
-  if (mobileView == 0) return;
-  if (mobileExpanded){
+  if (mobile_view == 0) return;
+  if (mobile_caro_expanded){
     unexpandMobileDesc();
   } else {
     expandMobileDesc();
@@ -457,12 +454,12 @@ window.addEventListener('resize', () => {
   caro_offset = window.innerWidth * 0.25;
   updateTrueGap();
   updatePosition();
-  if (expanded && window.innerWidth <= 950){
+  if (caro_expanded && window.innerWidth <= 950){
     unexpandCaroItem();
-    expanded = false;
-  } else if (mobileExpanded && window.innerWidth >= 950){
+    caro_expanded = false;
+  } else if (mobile_caro_expanded && window.innerWidth >= 950){
     unexpandMobileDesc();
-    mobileExpanded = false;
+    mobile_caro_expanded = false;
   }
 });
 //console.log(items.length)

@@ -3,6 +3,7 @@
     <head>
         <title>TESTING ZONE</title>
         <link rel="stylesheet" href="styles/test_styles.css">
+        <link rel="stylesheet" href="styles/super_header.css">
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,11 @@
         
     </head>
     <body>
+        <!-- this part can be page-specific -->
         <div class="header">
             <div class="logo"></div>
         </div>
+        <!-- this will be filled in by a script to ensure it's constant across all pages -->
         <div class="super-header">
             <div class ="super-header-buttons">
                 <button class ="header-g"></button>
@@ -28,19 +31,32 @@
                 <button class ="header-r"></button>
             </div>
             <div class ="super-header-menus">
-                <ul class="menu-g"></ul>
-                <ul class="menu-y"></ul>
-                <ul class="menu-c"></ul>
-                <ul class="menu-m"></ul>
-                <ul class="menu-o"></ul>
-                <ul class="menu-b"></ul>
-                <ul class="menu-r">
+                <ul class="menu-g">
+                    <li><a href="index.html">HOME</a></li>
+                </ul>
+                <ul class="menu-y">
+                    <li><a href="index.html">ABOUT</a></li>
+                </ul>
+                <ul class="menu-c">
+                    <li><a href="index.html">GAMES</a></li>
                     <li><a href="index.html">SHAHARAZON</a></li>
                     <li><a href="index.html">Wyrm Canyon</a></li>
                     <li><a href="index.html">goblin knight</a></li>
                     <li><a href="index.html">Mage Hand</a></li>
                     <li><a href="index.html">Kill Protocol</a></li>
                     <li><a href="index.html">XCVB</a></li>
+                </ul>
+                <ul class="menu-m">
+                    <li><a href="index.html">JOURNAL</a></li>
+                </ul>
+                <ul class="menu-o">
+                    <li><a href="index.html">EXTRAS</a></li>
+                </ul>
+                <ul class="menu-b">
+                    <li><a href="index.html">SECRETS</a></li>
+                </ul>
+                <ul class="menu-r">
+                    <li><a href="index.html">LINKS</a></li>
                 </ul>
             </div>
         </div>
@@ -106,5 +122,6 @@
             CRUD IS BACK
         </div>
     <script src="scripts/test_scripts.js"></script>
+    <script src="scripts/super_header.js"></script>
     </body>
 </html>
