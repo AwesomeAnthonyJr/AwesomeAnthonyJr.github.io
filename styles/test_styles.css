@@ -1392,20 +1392,26 @@ body {
     }
 }
 
-.carousel-header{
+.carousel-header {
     width: 100vw;
     background-color: #38dadd;
     border-top: 20px solid black;
     border-bottom: 20px solid black;
 }
 
-.carousel-header > h1{
+.carousel-header > h1 {
     font-size: 4rem;
     font-family: "Prompt", sans-serif;
     font-weight: 700;
     color: black;
     margin: 0;
     padding-left: 20px;    
+}
+
+@media screen and (max-width:650px) {
+    .carousel-header > h1 {
+        font-size: 2rem;
+    }
 }
 
 .green {
