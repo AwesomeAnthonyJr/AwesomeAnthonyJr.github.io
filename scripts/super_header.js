@@ -13,13 +13,13 @@ superHeader.innerHTML = `
 </div>
 <div class ="super-header-menus">
     <ul class="menu-g">
-        <li><a href="index.html">HOME</a></li>
+        <li><a href="/">HOME</a></li>
     </ul>
     <ul class="menu-y">
         <li><a href="index.html">ABOUT</a></li>
     </ul>
     <ul class="menu-c">
-        <li><a href="https://leaflightstudios.com/games">GAMES</a></li>
+        <li><a href="/games/">GAMES</a></li>
         <li><a href="index.html">SHAHARAZON</a></li>
         <li><a href="index.html">Wyrm Canyon</a></li>
         <li><a href="index.html">goblin knight</a></li>
