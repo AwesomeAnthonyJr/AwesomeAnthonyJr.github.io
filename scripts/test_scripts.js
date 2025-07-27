@@ -468,7 +468,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-calcBeBoldHeight();
+//calcBeBoldHeight();
 updateCaroBackground();
 updateTrueGap();
 snapTo(2);
