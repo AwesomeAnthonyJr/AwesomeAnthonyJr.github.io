@@ -34,6 +34,11 @@ track.insertBefore(secondlastClone, lastClone);
 
 const updateditems = Array.from(track.children);
 
+function calcBeBoldHeight() {
+  let height = 2 * document.querySelector('.text-texture > div').scrollHeight;
+  document.documentElement.style.setProperty('--bebold-height', `${height}px`);
+}
+
 function getSlideWidth() {
   return items[0].getBoundingClientRect().width;
 }
@@ -462,7 +467,8 @@ window.addEventListener('resize', () => {
     mobile_caro_expanded = false;
   }
 });
-//console.log(items.length)
+
+calcBeBoldHeight();
 updateCaroBackground();
 updateTrueGap();
 snapTo(2);
