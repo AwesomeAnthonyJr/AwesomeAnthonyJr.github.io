@@ -1,19 +1,61 @@
 //JAVASCRIPT FILE FOR THE SUPER HEADER STUFF
+const superHeader = document.querySelector('.super-header');
 
-const headerButtonG = document.querySelector('.header-g')
-const headerButtonY = document.querySelector('.header-c')
-const headerButtonC = document.querySelector('.header-y')
-const headerButtonM = document.querySelector('.header-m')
-const headerButtonO = document.querySelector('.header-o')
-const headerButtonB = document.querySelector('.header-b')
-const headerButtonR = document.querySelector('.header-r')
-const headerListG = document.querySelector('.menu-g')
-const headerListY = document.querySelector('.menu-c')
-const headerListC = document.querySelector('.menu-y')
-const headerListM = document.querySelector('.menu-m')
-const headerListO = document.querySelector('.menu-o')
-const headerListB = document.querySelector('.menu-b')
-const headerListR = document.querySelector('.menu-r')
+superHeader.innerHTML = `
+<div class ="super-header-buttons">
+    <button class ="header-g"></button>
+    <button class ="header-y"></button>
+    <button class ="header-c"></button>
+    <button class ="header-m"></button>
+    <button class ="header-o"></button>
+    <button class ="header-b"></button>
+    <button class ="header-r"></button>
+</div>
+<div class ="super-header-menus">
+    <ul class="menu-g">
+        <li><a href="index.html">HOME</a></li>
+    </ul>
+    <ul class="menu-y">
+        <li><a href="index.html">ABOUT</a></li>
+    </ul>
+    <ul class="menu-c">
+        <li><a href="index.html">GAMES</a></li>
+        <li><a href="index.html">SHAHARAZON</a></li>
+        <li><a href="index.html">Wyrm Canyon</a></li>
+        <li><a href="index.html">goblin knight</a></li>
+        <li><a href="index.html">Mage Hand</a></li>
+        <li><a href="index.html">Kill Protocol</a></li>
+        <li><a href="index.html">XCVB</a></li>
+    </ul>
+    <ul class="menu-m">
+        <li><a href="index.html">JOURNAL</a></li>
+    </ul>
+    <ul class="menu-o">
+        <li><a href="index.html">EXTRAS</a></li>
+    </ul>
+    <ul class="menu-b">
+        <li><a href="index.html">SECRETS</a></li>
+    </ul>
+    <ul class="menu-r">
+        <li><a href="index.html">LINKS</a></li>
+    </ul>
+</div>
+`;
+
+const headerButtonG = document.querySelector('.header-g');
+const headerButtonY = document.querySelector('.header-c');
+const headerButtonC = document.querySelector('.header-y');
+const headerButtonM = document.querySelector('.header-m');
+const headerButtonO = document.querySelector('.header-o');
+const headerButtonB = document.querySelector('.header-b');
+const headerButtonR = document.querySelector('.header-r');
+const headerListG = document.querySelector('.menu-g');
+const headerListY = document.querySelector('.menu-c');
+const headerListC = document.querySelector('.menu-y');
+const headerListM = document.querySelector('.menu-m');
+const headerListO = document.querySelector('.menu-o');
+const headerListB = document.querySelector('.menu-b');
+const headerListR = document.querySelector('.menu-r');
 let header_index = 0;
 
 function updateHeaderLists() {
