@@ -1137,7 +1137,7 @@ body {
 
 .description {
     width: 100vw;
-    background-color: black;
+    background-color: white;
     padding-bottom: 30px;
 }
 
@@ -1159,7 +1159,7 @@ body {
     font-size: 2rem;
     font-family: "Prompt", sans-serif;
     font-weight: 400;
-    color: white;
+    color: black;
     text-align: center;
     max-width: 1000px;
     margin: auto;
@@ -1390,6 +1390,23 @@ body {
     100% {
         transform: translateX(0ch);
     }
+}
+
+.carousel-header{
+    width: 100vw;
+    background-color: #38dadd;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 20px solid black;
+    border-bottom: 20px solid black;
+}
+
+.carousel-header > h1{
+    font-size: 4rem;
+    font-family: "Prompt", sans-serif;
+    font-weight: 700;
+    color: black;
+    margin: 0;    
 }
 
 .green {
