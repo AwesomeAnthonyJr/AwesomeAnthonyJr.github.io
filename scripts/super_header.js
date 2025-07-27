@@ -19,7 +19,7 @@ superHeader.innerHTML = `
         <li><a href="index.html">ABOUT</a></li>
     </ul>
     <ul class="menu-c">
-        <li><a href="index.html">GAMES</a></li>
+        <li><a href="https://leaflightstudios.com/games">GAMES</a></li>
         <li><a href="index.html">SHAHARAZON</a></li>
         <li><a href="index.html">Wyrm Canyon</a></li>
         <li><a href="index.html">goblin knight</a></li>
