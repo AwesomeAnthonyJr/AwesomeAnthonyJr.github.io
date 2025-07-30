@@ -1,0 +1,98 @@
+/*SUPER FOOTER PORTION OF STYLES*/
+
+.super-footer {
+    background-color: black;
+    z-index: 10;
+    margin: 0;
+}
+
+.super-footer * {
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.super-footer-colors {
+    display: flex;
+    height: 20px;
+    width: 980px;
+}
+
+.super-footer-colors > div {
+    height: 100%;
+    border: none;
+    flex: 1;
+}
+
+.footer-g {
+    background-color: #d132e4;
+}
+
+.footer-y {
+    background-color: #173ff9;
+}
+
+.footer-c {
+    background-color: #dd3e3a;
+}
+
+.footer-m {
+    background-color: #36df82;
+}
+
+.footer-o {
+    background-color: #3ea7eb;
+}
+
+.footer-b {
+    background-color: #cda337;
+}
+
+.footer-r {
+    background-color: #38e2df;
+}
+
+.super-footer-grid {
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.super-footer-grid > ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.super-footer-grid > ul > li > a {
+    color: #b4b4b4;
+    text-decoration: underline;
+}
+
+.super-footer-grid > ul > li > a:hover {
+    color: black;
+    background-color: #b4b4b4;
+    text-decoration: none;
+}
+
+.super-footer-bottom {
+    text-align: center;
+    margin: auto;
+    color: #282828;
+    padding: 8px;
+}
+
+@media screen and (max-width:980px) {
+    .super-footer-colors {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .super-footer-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto auto;
+    }
+}
