@@ -48,23 +48,44 @@
 .header-g {
     background-color: #44e537;
 }
+.header-g:hover {
+    background-color: #76ff69;
+}
 .header-y {
     background-color: #fad019;
+}
+.header-y:hover {
+    background-color: #ffff4b;
 }
 .header-c {
     background-color: #38dadd;
 }
+.header-c:hover {
+    background-color: #6affff;
+}
 .header-m {
     background-color: #dd3894;
+}
+.header-m:hover {
+    background-color: #ff65c7;
 }
 .header-o {
     background-color: #ec813b;
 }
+.header-o:hover {
+    background-color: #ffb36d;
+}
 .header-b {
     background-color: #3d5ed2;
 }
+.header-b:hover {
+    background-color: #6f90ff;
+}
 .header-r {
     background-color: #e2383b;
+}
+.header-r:hover {
+    background-color: #ff6a6d;
 }
 
 .super-header-menus > ul{
