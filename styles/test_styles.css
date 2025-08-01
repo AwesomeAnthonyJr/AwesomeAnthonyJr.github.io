@@ -239,7 +239,10 @@ body {
     display: none;
   }
   .game-grid > li > div > p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+  .game-grid > li > div {
+    height: auto;
   }
 }
 
