@@ -185,7 +185,7 @@ body {
 
 .game-grid > li {
   width: 500px;
-  height: 500px;
+  min-height: 500px;
   background-repeat: no-repeat;
   background-size: contain;
   transition: transform 0.2s ease-in;
@@ -240,9 +240,6 @@ body {
   .game-grid > li > div > p {
     font-size: 1rem;
   }
-  .reccomendations > .game-grid > li {
-    height: auto;
-  }
 }
 
 .game-grid > .grid-SHAHARAZON > a {
@@ -293,7 +290,7 @@ body {
 
     .game-grid > li{
       width: calc(100vw - 20px);
-      height: calc(100vw - 20px);
+      min-height: calc(100vw - 20px);
     }
 }
 
