@@ -8,8 +8,14 @@ let rec_view = false;
 let store_link = false;
 
 function updateDisplayHeight() {
-    const icons = document.querySelector('.text-icons');
-    var temp = icons.scrollHeight;
+    let temp;
+    if (rec_view) {
+        const recs = document.querySelector('.reccomendations');
+        temp = recs.scrollHeight;
+    } else {
+        const icons = document.querySelector('.text-icons');
+        temp = icons.scrollHeight;
+    }
     document.documentElement.style.setProperty('--display-height', `${temp}px`);
 }
 
@@ -153,6 +159,7 @@ recButton.addEventListener('click', () => {
     rec_view = !rec_view;
     updateRecSpin();
     updateButtons();
+    updateDisplayHeight();
 });
 
 storeButton.addEventListener('click', () => {
