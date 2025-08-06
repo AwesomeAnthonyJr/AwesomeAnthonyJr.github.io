@@ -97,6 +97,13 @@ body {
     margin: auto;
 }
 
+@media screen and (max-width:1150px) {
+    .construction > div{
+        width: 150px;
+        height: 200px;
+    }
+}
+
 @media screen and (max-width:650px) {
     .construction > div{
         display: none;

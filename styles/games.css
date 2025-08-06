@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-    background-color: #38dadd;
+    background-color: black;
     display: flex;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@ body {
     height: 100px;
 }
 
-.header > h1 {
+.header > h1{
     font-size: 35px;
     font-family: "Prompt", sans-serif;
     color: white;
@@ -43,34 +43,25 @@ body {
 .header > h2 {
     font-size: 70px;
     font-family: "Prompt", sans-serif;
-    color: black;
+    color: #38dadd;
     padding-left: 12px;
     margin: 0;
-    background-color: #38dadd;
+    background-color: black;
 }
 
 @media screen and (max-width:730px) {
-    .header > h1{
-        font-size: 35px;
-    }
     .header > h2{
         font-size: 60px;
     }
 }
 
 @media screen and (max-width:630px) {
-    .header > h1{
-        font-size: 35px;
-    }
     .header > h2{
         font-size: 50px;
     }
 }
 
 @media screen and (max-width:540px) {
-    .header > h1{
-        font-size: 35px;
-    }
     .header > h2{
         font-size: 40px;
     }
