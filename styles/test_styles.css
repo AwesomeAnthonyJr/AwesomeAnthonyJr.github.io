@@ -75,7 +75,7 @@ body {
 }
 
 .manual-header {
-  z-index: 1;
+  /*background: linear-gradient(0deg,rgba(229, 229, 229, 1) 0%, rgba(229, 229, 229, 1) 40%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 1) 100%);*/
 }
 
 .manual-header > div {
@@ -88,6 +88,7 @@ body {
   padding: 4px;
   margin: auto;
   margin-bottom: 4px;
+  z-index: 1;
 }
 
 .manual-header > .text-icon {
@@ -98,6 +99,8 @@ body {
   background-size: contain;
   border: 0;
   margin: auto;
+  z-index: 2;
+  position: relative;
 }
 
 .manual-header > div > span{
