@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-    background-color: #38dadd;
+    background-color: black;
     display: flex;
     top: 0;
     left: 0;
@@ -37,10 +37,10 @@ body {
 .header > h2 {
     font-size: 70px;
     font-family: "Prompt", sans-serif;
-    color: black;
+    color: #38dadd;
     padding-left: 12px;
     margin: 0;
-    background-color: #38dadd;
+    background-color: black;
 }
 
 @media screen and (max-width:730px) {
@@ -84,13 +84,15 @@ body {
 }
 
 .construction {
-    height: 100vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
-    margin: auto;
 }
 
 .construction > h1 {
     border: 4px solid black;
     background-color: white;
+    padding: 10px;
+    height: auto;
+    margin: auto;
 }
