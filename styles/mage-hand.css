@@ -90,7 +90,7 @@ body {
 }
 
 .construction > div {
-    background-image: url('/styles/images/MageHand_display_300_400.png');
+    background-image: url('images/MageHand_display_300_400.png');
     width: 300px;
     height: 400px;
     background-size: cover;
@@ -104,7 +104,7 @@ body {
     }
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:900px) {
     .construction > div{
         display: none;
     }

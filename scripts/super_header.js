@@ -20,12 +20,12 @@ superHeader.innerHTML = `
     </ul>
     <ul class="menu-c">
         <li><a href="/games/">GAMES</a></li>
-        <li><a href="index.html">SHAHARAZON</a></li>
-        <li><a href="index.html">Wyrm Canyon</a></li>
-        <li><a href="index.html">goblin knight</a></li>
-        <li><a href="index.html">Mage Hand</a></li>
-        <li><a href="index.html">Kill Protocol</a></li>
-        <li><a href="index.html">XCVB</a></li>
+        <li><a href="/games/shaharazon">SHAHARAZON</a></li>
+        <li><a href="/games/wyrm-canyon">Wyrm Canyon</a></li>
+        <li><a href="/games/goblin-knight">goblin knight</a></li>
+        <li><a href="/games/mage-hand">Mage Hand</a></li>
+        <li><a href="/games/kill-protocol">Kill Protocol</a></li>
+        <li><a href="/games/xcvb">XCVB</a></li>
     </ul>
     <ul class="menu-m">
         <li><a href="index.html">JOURNAL</a></li>
