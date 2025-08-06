@@ -23,15 +23,15 @@ function updateButtons() {
     var temp = recButton.scrollHeight;
     document.documentElement.style.setProperty('--display-button-height', `${temp}px`);
     if (rec_view) {
-        recButtonIndicator.src = "styles/images/WEB_boolean_true.png";
+        recButtonIndicator.src = "/styles/images/WEB_boolean_true.png";
     } else {
-        recButtonIndicator.src = "styles/images/WEB_boolean_false.png";
+        recButtonIndicator.src = "/styles/images/WEB_boolean_false.png";
     }
 
     if (store_link) {
-        storeButtonIndicator.src = "styles/images/WEB_boolean_true.png";
+        storeButtonIndicator.src = "/styles/images/WEB_boolean_true.png";
     } else {
-        storeButtonIndicator.src = "styles/images/WEB_boolean_false.png";
+        storeButtonIndicator.src = "/styles/images/WEB_boolean_false.png";
     }
 }
 
