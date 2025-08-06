@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-    background-color: black;
+    background-color: #38dadd;
     display: flex;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@ body {
 }
 
 .header > h1{
-    font-size: 70px;
+    font-size: 35px;
     font-family: "Prompt", sans-serif;
     color: white;
     padding-left: 12px;
@@ -33,12 +33,12 @@ body {
 }
 
 .header > h2 {
-    font-size: 35px;
+    font-size: 70px;
     font-family: "Prompt", sans-serif;
-    color: #38dadd;
+    color: black;
     padding-left: 12px;
     margin: 0;
-    background-color: black;
+    background-color: #38dadd;
 }
 
 @media screen and (max-width:730px) {
