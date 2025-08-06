@@ -31,15 +31,16 @@ body {
     padding-left: 12px;
     margin: 0;
     background-color: black;
+    width: 168px;
 }
 
 .header > h2 {
     font-size: 70px;
     font-family: "Prompt", sans-serif;
-    color: black;
+    color: #38dadd;
     padding-left: 12px;
     margin: 0;
-    background-color: #38dadd;
+    background-color: black;
 }
 
 @media screen and (max-width:730px) {
@@ -94,4 +95,10 @@ body {
     height: 400px;
     background-size: cover;
     margin: auto;
+}
+
+@media screen and (max-width:650px) {
+    .construction > div{
+        display: none;
+    }
 }
