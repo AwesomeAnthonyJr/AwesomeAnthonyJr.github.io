@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-    background-color: #38dadd;
+    background-color: black;
     display: flex;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@ body {
 }
 
 .header > h1{
-    font-size: 35px;
+    font-size: 70px;
     font-family: "Prompt", sans-serif;
     color: white;
     padding-left: 12px;
@@ -33,28 +33,29 @@ body {
 }
 
 .header > h2 {
-    font-size: 70px;
+    font-size: 35px;
     font-family: "Prompt", sans-serif;
     color: black;
     padding-left: 12px;
     margin: 0;
     background-color: #38dadd;
+    writing-mode: vertical-lr;
 }
 
 @media screen and (max-width:730px) {
-    .header > h2{
+    .header > h1{
         font-size: 60px;
     }
 }
 
 @media screen and (max-width:630px) {
-    .header > h2{
+    .header > h1{
         font-size: 50px;
     }
 }
 
 @media screen and (max-width:540px) {
-    .header > h2{
+    .header > h1{
         font-size: 40px;
     }
 }
@@ -63,6 +64,9 @@ body {
     .header {
       background-color: black;
     }
+    .header > h1{
+        font-size: 35px;
+    }
     .header > h2{
         font-size: 35px;
         display: none;
@@ -70,7 +74,7 @@ body {
 }
 
 .construction {
-    height: 50vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
 }
@@ -86,7 +90,7 @@ body {
 
 .construction > div {
     background-image: url('/styles/images/MageHand_display_300_400.png');
-    width: 300px;
-    height: 400px;
+    max-width: 300px;
+    max-height: 400px;
     background-size: cover;
 }
