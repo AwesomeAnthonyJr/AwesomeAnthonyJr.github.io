@@ -147,3 +147,280 @@ body {
     width: 95vw;
   }
 }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  width: 100vw;
+}
+
+@media screen and (max-width:950px) {
+  .grid2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .empty {
+    display: none;
+  }
+}
+
+.empty {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: relative;
+}
+
+.text-left {
+  display: block;
+  text-align: left;
+}
+.text-right {
+  display: block;
+  text-align: right;
+}
+.text-center {
+  display: block;
+  text-align: center;
+}
+
+.bottom-left-right-triangle {
+  clip-path: polygon(0 100%, 100% 100%, 0 0);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.angled-stripe-1 {
+  clip-path: polygon(0% 60%, 0% 30%, 100% 15%, 100% 45%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.angled-stripe-2 {
+  clip-path: polygon(0% 75%, 0% 65%, 100% 50%, 100% 60%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mage-hand-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/MageHand_manual_sky.jpg');
+}
+
+.red-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e2383b;
+}
+
+.standing-player-sprite {
+  width: 48px;
+  height: 96px;
+  background-image: url('images/MageHand_manual_standingplayer.png');
+  position: absolute;
+  top: calc(100% - 96px);
+  left: 128px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#page-0 {
+  background: radial-gradient(circle,rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%), url('images/MageHand_manual_bricks.png');
+  background-size: 64px;
+  image-rendering: pixelated;
+}
+
+@media screen and (max-width:950px) {
+  #page-0 {
+    border-bottom: 6px solid #c89e00;
+  }
+}
+
+.table-of-contents {
+  border: 6px solid #c89e00;
+  border-radius: 12px;
+  width: 95%;
+  margin: auto;
+  max-width: 500px;
+  font-family: "Prompt", sans-serif;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.table-of-contents > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 6px dotted #c89e00;
+  width: fit-content;
+}
+
+.table-of-contents > ul {
+  list-style: none;
+  margin: 10px;
+  margin-left: 20px;
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+.introduction-text {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url('images/MageHand_manual_sky.jpg');
+  border-top: 6px solid white;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.introduction-text > h2 {
+  text-align: left;
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  padding-left: 4px;
+  padding-right: 40px;
+  width: fit-content;
+  border-bottom: 6px solid white;
+  
+}
+
+@media screen and (max-width:950px) {
+    .introduction-text {
+    border-top: none;
+  }
+
+  .introduction-text > h2 {
+    border-top: 6px solid white;
+  }
+}
+
+.introduction-text > h3 {
+  max-width: 480px;
+  width: 95%;
+  margin: auto;
+  font-size: 1.25rem;
+  font-family: "Cantata One", serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  
+  color: white;
+  /*
+  color: transparent;
+  background-clip: text;
+  background-image: url('images/MageHand_manual_magic_fog.jpg');
+  background-size: contain;
+  */
+}
+
+.introduction-text > p {
+  max-width: 600px;
+  width: calc(95% - 32px);
+  margin: auto;
+  text-align: left;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  border: 16px solid transparent;
+  border-image: url('images/MageHand_border_image_1.png') 16 round;
+  image-rendering: pixelated;
+  background-color: black;
+  padding: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.introduction-image {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.introduction-image > div {
+  max-width: 360px;
+  width: calc(100% - 8px);
+  height: 360px;
+  margin: auto;
+  background-image: url('images/MageHand_manual_intro.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 4px solid black;
+}
+
+.introduction-image > h1 {
+  max-width: 360px;
+  width: calc(100% - 8px);
+  margin: auto;
+  background-color: black;
+  border: 4px solid black;
+  color: white;
+  text-align: center;
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: bold;
+}
+
+.introduction-image > .angled-stripe-1 {
+  border: none;
+  width: 100%;
+  height: 100%;
+  max-width: 9999px;
+  z-index: -1;
+}
+
+.introduction-image > .angled-stripe-2 {
+  border: none;
+  width: 100%;
+  height: 100%;
+  max-width: 9999px;
+  z-index: -1;
+}
+
+@media screen and (max-width:950px) {
+  .introduction-image {
+    background-image: url('images/MageHand_manual_sky.jpg');
+  }
+
+  .introduction-image > div {
+    border-color: white;
+  }
+  
+  .introduction-image > h1 {
+    border-color: white;
+    background-color: white;
+    color: black;
+  }
+}
