@@ -1,3 +1,13 @@
+:root {
+  --controls-y-height: 100px;
+  --controls-g-height: 100px;
+  --controls-c-height: 100px;
+  --controls-c-width: 100px;
+  --controls-m-height: 100px;
+  --controls-r-height: 100px;
+  --controls-b-height: 100px;
+}
+
 body {
   background-color: white;
   margin: 0 0 0 0;
@@ -423,4 +433,314 @@ body {
     background-color: white;
     color: black;
   }
+}
+
+#page-2 {
+  position: relative;
+  image-rendering: pixelated;
+  height: calc(var(--controls-y-height) + var(--controls-m-height) + var(--controls-b-height) + 500px);
+}
+
+#page-2 > h2 {
+  text-align: left;
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  margin-bottom: 0px;
+  padding: 0;
+  padding-left: 4px;
+  padding-right: 40px;
+  width: fit-content;
+  color: black;
+}
+
+.keyboard-graphic {
+  background-image: url('images/MageHand_manual_keyboard.png');
+  width: 650px;
+  height: 400px;
+  margin: auto;
+  background-size: cover;
+  margin-top: calc(var(--controls-y-height) + var(--controls-m-height));
+  margin-bottom: calc(var(--controls-b-height));
+}
+
+.controls-y {
+  background-color: #fad019;
+  border: 4px solid #fad019;
+  color: black;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 400px;
+  width: 95%;
+  position: absolute;
+  top: 20px;
+  left: 400px;
+}
+@media screen and (max-width:1350px) {
+  .controls-y {
+    left: 200px;
+  }
+}
+.controls-y > .controls-image {
+  background-image: url('images/MageHand_manual_HAND.png');
+  width: 192px;
+  height: 192px;
+  margin: auto;
+  background-size: cover;
+}
+.controls-y > h3 {
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  border-top: 4px solid #fad019;
+}
+
+.controls-r {
+  background-color: transparent;
+  border-bottom: 4px solid #e2383b;
+  color: #e2383b;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: bold;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: absolute;
+  top: calc(var(--controls-y-height) + var(--controls-m-height) + 180px);
+  left: 240px;
+}
+@media screen and (max-width:1350px) {
+  .controls-r {
+    left: 120px;
+  }
+}
+.controls-m {
+  background-color: #dd3894;
+  border: 4px solid #dd3894;
+  color: black;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 600px;
+  width: 95%;
+  position: absolute;
+  top: calc(var(--controls-y-height) + 80px);
+  left: 10px;
+}
+.controls-m > .controls-image {
+  background-image: url('images/MageHand_manual_interact.png');
+  width: 240px;
+  height: 128px;
+  margin: auto;
+  background-size: cover;
+}
+.controls-m > h3 {
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  border-top: 4px solid #dd3894;
+}
+
+.controls-b {
+  background-color: #3d5ed2;
+  border: 4px solid #3d5ed2;
+  color: black;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 1000px;
+  width: 95%;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.controls-b > .controls-image {
+  background-image: url('images/MageHand_manual_store.png');
+  width: 240px;
+  height: 96px;
+  margin: auto;
+  background-size: cover;
+}
+.controls-b > h3 {
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  border-top: 4px solid #3d5ed2;
+}
+.controls-b > h4 {
+  width: calc(100%-8px);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.controls-c {
+  background-color: #38dadd;
+  border: 4px solid #38dadd;
+  color: black;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 400px;
+  width: 95%;
+  position: absolute;
+  top: calc(var(--controls-y-height) + 80px);
+  left: calc(var(--controls-m-width) + 200px);
+}
+@media screen and (max-width:1217px) {
+  .controls-c {
+    left: unset;
+    right: 10px;
+  }
+}
+.controls-c > .controls-image {
+  background-image: url('images/MageHand_manual_spell.png');
+  width: 100px;
+  height: 128px;
+  margin: auto;
+  background-size: cover;
+}
+.controls-c > h3 {
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  border-top: 4px solid #38dadd;
+}
+
+.controls-g {
+  background-color: transparent;
+  color: black;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 400px;
+  width: 95%;
+  position: absolute;
+  top: calc(var(--controls-y-height) + var(--controls-m-height) + 120px);
+  right: 60px;
+}
+@media screen and (max-width:1550px) {
+  .controls-g {
+    right: 10px;
+  }
+}
+@media screen and (max-width:1450px) {
+  .controls-g {
+    top: calc(var(--controls-y-height) 80px);
+    right: 10px;
+  }
+}
+.controls-g > .controls-image {
+  background-image: url('images/MageHand_manual_movement.png');
+  width: 400px;
+  height: 128px;
+  margin: auto;
+  background-size: cover;
+}
+.controls-g > h3 {
+  width: calc(100%-8px);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-color: white;
+  border: 4px solid #44e537;
+  text-align: center;
+}
+
+@media screen and (max-width:1200px) {
+  .controls-y {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .controls-r {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .controls-g {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .controls-b {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .controls-c {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .controls-m {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+  }
+  #page-2 {
+    height: fit-content;
+  }
+  .keyboard-graphic {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.controls-foreground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
