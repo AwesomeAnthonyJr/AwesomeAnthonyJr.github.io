@@ -273,6 +273,15 @@ body {
   background-image: url('images/MageHand_manual_sky.jpg');
 }
 
+.mage-hand-warp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/Screenshot\ 2025-05-03\ 225120.png');
+}
+
 .red-bg {
   position: absolute;
   top: 0;
@@ -379,22 +388,35 @@ body {
 
 .table-of-contents > h2 {
   font-size: 2rem;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 700;
+  font-style: bold;
   text-align: center;
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
+  /*
   border-bottom: 6px dotted #cda337;
+  */
   width: fit-content;
+}
+
+.table-of-contents > h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;  
+  width: fit-content;
+  margin: 10px;
+  margin-left: 20px;
+  border-bottom: 4px solid #cda337;
 }
 
 .table-of-contents > ul {
   list-style: none;
   margin: 10px;
-  margin-left: 20px;
+  margin-left: 40px;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .introduction-text {
@@ -1039,6 +1061,10 @@ body {
   z-index: -1;
 }
 
+#page-3 {
+  overflow: hidden;
+}
+
 .castle-text {
   width: 100%;
   position: relative;
@@ -1087,6 +1113,8 @@ body {
   background-size: cover;
   border: 4px solid black;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .book-of-memories-floater {
@@ -1106,6 +1134,7 @@ body {
   top: 0px;
   right: -100px;
   color: white;
+  z-index: 2;
 }
 
 .book-of-memories * {
@@ -1135,7 +1164,7 @@ body {
   padding-left: 12px;
   padding-right: 12px;
   margin-top: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 12px
 }
 
 .book-image {
@@ -1164,4 +1193,108 @@ body {
   .book-of-memories-floater {
     display: none;
   }
+}
+
+.castle-image {
+  position: relative;
+  width: calc(100% - 100px);
+  margin-left: 100px;
+}
+
+.castle-image > h3 {
+  width: calc(97.5% + 100px);
+  margin-left: -100px;
+  text-align: center;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: bold;
+  padding: 4px;
+  margin-top: 120px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.castle-image > p {
+  width: calc(97.5% + 100px);
+  margin-left: -100px;
+  text-align: left;
+  font-family: "Prompt", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  padding: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width:950px) {
+  .castle-image {
+    width: 100%;
+    margin-left: 0;
+    background-color: black;
+  }
+  .castle-image > h3{
+    width: 95%;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  .castle-image > p{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+  }
+}
+
+.memory-castle {
+  background-image: url('images/MageHand_manual_memcastlemap.png');
+  max-width: 600px;
+  width: 95%;
+  aspect-ratio: 1/1;
+  margin: auto;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+.memory-castle-background {
+  clip-path: circle(450px);
+  overflow: hidden;
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  top: -30%;
+  left: -50%;
+}
+
+@media screen and (max-width:1400px) {
+  .memory-castle-background {
+    clip-path: circle(400px);
+    top: -35%;
+  }
+}
+@media screen and (max-width:1200px) {
+  .memory-castle-background {
+    clip-path: circle(350px);
+    top: -40%;
+  }
+}
+@media screen and (max-width:950px) {
+  .memory-castle-background {
+    clip-path: circle(450px);
+    top: -70%;
+    height: 200%;
+  }
+}
+
+.memory-castle-background > div {
+  background-position: center;
 }
