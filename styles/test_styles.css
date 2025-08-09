@@ -562,6 +562,7 @@ body {
   height: calc(var(--controls-y-height) + var(--controls-m-height) + var(--controls-b-height) + 500px);
   border-top: 6px solid black;
   border-bottom: 6px solid black;
+  overflow: hidden;
 }
 
 #page-2 > h2 {
@@ -981,6 +982,9 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+  .controls-g > .controls-image{
+    display: none;
+  }
   .controls-b {
     position: static;
     width: 95%;
@@ -1292,6 +1296,8 @@ body {
     clip-path: circle(450px);
     top: -70%;
     height: 200%;
+    width: 100%;
+    left: 0;
   }
 }
 
