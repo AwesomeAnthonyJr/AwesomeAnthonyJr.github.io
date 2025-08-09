@@ -128,13 +128,12 @@ function updateStoreSpin() {
             icon_KillProtocol.style.backgroundImage = `url("/styles/images/KillProtocol_text_icon.png")`;
             icon_XCVB.style.backgroundImage = `url("/styles/images/XCVB_text_icon.png")`;
 
-            //REPLACE WITH GAME PAGE LINKS
-            icon_SHAHARAZON.querySelector('a').href = "/games/";
-            icon_WyrmCanyon.querySelector('a').href = "/games/";
-            icon_goblinknight.querySelector('a').href = "/games/";
-            icon_MageHand.querySelector('a').href = "/games/";
-            icon_KillProtocol.querySelector('a').href = "/games/";
-            icon_XCVB.querySelector('a').href = "/games/";
+            icon_SHAHARAZON.querySelector('a').href = "/games/shaharazon";
+            icon_WyrmCanyon.querySelector('a').href = "/games/wyrm-canyon";
+            icon_goblinknight.querySelector('a').href = "/games/goblin-knight";
+            icon_MageHand.querySelector('a').href = "/games/mage-hand";
+            icon_KillProtocol.querySelector('a').href = "/games/kill-protocol";
+            icon_XCVB.querySelector('a').href = "/games/xcvb";
 
             icon_SHAHARAZON.style.transform = "rotateY(0deg)";
             icon_WyrmCanyon.style.transform = "rotateY(0deg)";
