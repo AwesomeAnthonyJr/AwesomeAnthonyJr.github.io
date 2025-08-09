@@ -114,7 +114,7 @@ function scrollAllInList(list) {
 }
 
 function scrollItem(parent, text) {
-  console.log(text.textContent);
+  //console.log(text.textContent);
   const parentWidth = parent.offsetWidth;
   const textWidth = text.scrollWidth;
   let distance = textWidth - parentWidth;
