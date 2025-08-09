@@ -6,6 +6,7 @@
   --controls-m-height: 100px;
   --controls-r-height: 100px;
   --controls-b-height: 100px;
+  scroll-padding-top: 20px;
 }
 
 body {
@@ -561,7 +562,6 @@ body {
   image-rendering: pixelated;
   height: calc(var(--controls-y-height) + var(--controls-m-height) + var(--controls-b-height) + 500px);
   border-top: 6px solid black;
-  border-bottom: 6px solid black;
   overflow: hidden;
 }
 
@@ -1067,6 +1067,7 @@ body {
 
 #page-3 {
   overflow: hidden;
+  border-top: 6px solid black;
 }
 
 .castle-text {

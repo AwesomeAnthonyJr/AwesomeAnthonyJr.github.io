@@ -80,12 +80,12 @@ function updateStoreSpin() {
         icon_XCVB.style.transform = "rotateY(90deg)";
 
         icon_SHAHARAZON.addEventListener('transitionend', () => {
-            icon_SHAHARAZON.style.backgroundImage = `url("styles/images/SHAHARAZON_text_icon_store.png")`;
-            icon_WyrmCanyon.style.backgroundImage = `url("styles/images/WyrmCanyon_text_icon_store.png")`;
-            icon_goblinknight.style.backgroundImage = `url("styles/images/goblinknight_text_icon_store.png")`;
-            icon_MageHand.style.backgroundImage = `url("styles/images/MageHand_text_icon_store.png")`;
-            icon_KillProtocol.style.backgroundImage = `url("styles/images/KillProtocol_text_icon_store.png")`;
-            icon_XCVB.style.backgroundImage = `url("styles/images/XCVB_text_icon_store.png")`;
+            icon_SHAHARAZON.style.backgroundImage = `url("/styles/images/SHAHARAZON_text_icon_store.png")`;
+            icon_WyrmCanyon.style.backgroundImage = `url("/styles/images/WyrmCanyon_text_icon_store.png")`;
+            icon_goblinknight.style.backgroundImage = `url("/styles/images/goblinknight_text_icon_store.png")`;
+            icon_MageHand.style.backgroundImage = `url("/styles/images/MageHand_text_icon_store.png")`;
+            icon_KillProtocol.style.backgroundImage = `url("/styles/images/KillProtocol_text_icon_store.png")`;
+            icon_XCVB.style.backgroundImage = `url("/styles/images/XCVB_text_icon_store.png")`;
 
             icon_SHAHARAZON.querySelector('a').href = "https://leaflight-studios.itch.io/agj0project";
             icon_WyrmCanyon.querySelector('a').href = "https://leaflight-studios.itch.io/wyrm-canyon";
@@ -121,12 +121,12 @@ function updateStoreSpin() {
         icon_XCVB.style.transform = "rotateY(-90deg)";
 
         icon_SHAHARAZON.addEventListener('transitionend', () => {
-            icon_SHAHARAZON.style.backgroundImage = `url("styles/images/SHAHARAZON_text_icon.png")`;
-            icon_WyrmCanyon.style.backgroundImage = `url("styles/images/WyrmCanyon_text_icon.png")`;
-            icon_goblinknight.style.backgroundImage = `url("styles/images/goblinknight_text_icon.png")`;
-            icon_MageHand.style.backgroundImage = `url("styles/images/MageHand_text_icon.png")`;
-            icon_KillProtocol.style.backgroundImage = `url("styles/images/KillProtocol_text_icon.png")`;
-            icon_XCVB.style.backgroundImage = `url("styles/images/XCVB_text_icon.png")`;
+            icon_SHAHARAZON.style.backgroundImage = `url("/styles/images/SHAHARAZON_text_icon.png")`;
+            icon_WyrmCanyon.style.backgroundImage = `url("/styles/images/WyrmCanyon_text_icon.png")`;
+            icon_goblinknight.style.backgroundImage = `url("/styles/images/goblinknight_text_icon.png")`;
+            icon_MageHand.style.backgroundImage = `url("/styles/images/MageHand_text_icon.png")`;
+            icon_KillProtocol.style.backgroundImage = `url("/styles/images/KillProtocol_text_icon.png")`;
+            icon_XCVB.style.backgroundImage = `url("/styles/images/XCVB_text_icon.png")`;
 
             //REPLACE WITH GAME PAGE LINKS
             icon_SHAHARAZON.querySelector('a').href = "/games/";
