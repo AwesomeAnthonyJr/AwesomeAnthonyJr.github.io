@@ -1406,6 +1406,7 @@ body {
 #page-4 {
   border-top: 6px double #cda337;
   position: relative;
+  width: 100vw;
 }
 
 @media screen and (max-width:950px) {
@@ -1435,6 +1436,8 @@ body {
 
 .the-game-screen {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .objectives {
@@ -1442,6 +1445,7 @@ body {
   height: 100%;
   width: 100%;
   color: black;
+  overflow: hidden;
 }
 
 .objectives > h2 {
@@ -1513,13 +1517,14 @@ body {
 
 .the-game-screen-grid {
   display: grid;
-  grid-template-columns: 1fr calc(320px + 8px);
+  grid-template-columns: 1fr 320px;
   background-color: black;
+  width: 100%;
 }
 
 @media screen and (max-width:1250px) {
   .the-game-screen-grid {
-    grid-template-columns: 1fr calc(160px + 8px);
+    grid-template-columns: 1fr 160px;
   }
 }
 
@@ -1707,7 +1712,7 @@ body {
 .the-game-screen-display {
   background-color: black;
   height: 720px;
-  border: 4px solid black;
+  width: 100%;
   margin-top: auto;
   margin-bottom: auto;
 }
