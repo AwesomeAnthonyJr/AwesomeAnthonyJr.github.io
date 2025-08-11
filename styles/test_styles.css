@@ -7,6 +7,22 @@
   --controls-r-height: 100px;
   --controls-b-height: 100px;
   scroll-padding-top: 20px;
+
+  --room-explanation-height: 20px;
+  --difficulty-explanation-height: 20px;
+  --vitals-explanation-height: 20px;
+  --status-explanation-height: 20px;
+  --sequence-explanation-height: 20px;
+  --prior-explanation-height: 20px;
+}
+
+@font-face {
+    font-family: 'Dungeon Tongue Minus';
+    src: url('fonts/DungeonTongueMinus.woff2') format('woff2'),
+        url('fonts/DungeonTongueMinus.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -195,6 +211,11 @@ body {
   text-align: center;
 }
 
+.basic-flex {
+  display: flex;
+  width: 100%;
+}
+
 .bottom-left-right-triangle {
   clip-path: polygon(0 100%, 100% 100%, 0 0);
   overflow: hidden;
@@ -234,6 +255,37 @@ body {
   top: 0;
   left: 0;
 }
+
+.angled-stripe-3 {
+  clip-path: polygon(40% 0%, 60% 0%, 70% 100%, 50% 100%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.angled-stripe-4 {
+  clip-path: polygon(0% 0%, 30% 0%, 40% 100%, 0% 100%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.angled-stripe-5 {
+  clip-path: polygon(70% 0%, 75% 0%, 85% 100%, 80% 100%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 .rectangle-ninety {
   clip-path: polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%);
@@ -292,6 +344,33 @@ body {
   background-color: #e2383b;
 }
 
+.cyan-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #38dadd;
+}
+
+.magenta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dd3894;
+}
+
+.blue-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3d5ed2;
+}
+
 .gold-bg {
   position: absolute;
   top: 0;
@@ -310,6 +389,15 @@ body {
   background-color: #e8dc82;
 }
 
+.light-gray-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5e5;
+}
+
 .med-gray-bg {
   position: absolute;
   top: 0;
@@ -317,6 +405,15 @@ body {
   width: 100%;
   height: 100%;
   background-color: #b4b4b4;
+}
+
+.dark-gray-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #232323;
 }
 
 .standing-player-sprite {
@@ -1304,4 +1401,473 @@ body {
 
 .memory-castle-background > div {
   background-position: center;
+}
+
+#page-4 {
+  border-top: 6px double #cda337;
+  position: relative;
+}
+
+@media screen and (max-width:950px) {
+  #page-4 {
+    background-color: black;
+  }
+}
+
+#page-4 * h2 {
+  font-family: "Prompt", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: calc(100%-8px);
+  background-color: #cda337;
+  background-clip: padding-box;
+  color:#e8dc82;
+  border-bottom: 6px double #cda337;
+  position: relative;
+  z-index: 2;
+}
+
+.the-game-screen {
+  position: relative;
+}
+
+.objectives {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+
+.objectives > h2 {
+  text-align: left;
+}
+
+.the-game-screen > h2 {
+  text-align: right;
+}
+
+.objectives > p {
+  font-family: 'Prompt', sans-serif;
+  width: calc(95% - 8px);
+  max-width: calc(750px  - 8px);
+  padding: 4px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.objectives * * > h3 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: bold;
+  margin: 0;
+  padding: 4px;
+  padding-bottom: 0;
+  width: fit-content;
+  border-bottom: 4px solid black;
+}
+
+.objectives * * > p {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: bold;
+  margin: 0;
+  padding: 4px;
+}
+
+.objectives > .basic-flex {
+  width: 95%;
+  max-width: 750px;
+  margin: auto;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.objectives > .basic-flex > div {
+  flex: 1;
+  width: 95%;
+}
+
+@media screen and (max-width:950px) {
+  .objectives {
+    color: white;
+  }
+  .objectives * * > h3{
+    border-bottom: 4px solid white;
+  }
+}
+
+.the-game-screen-grid {
+  display: grid;
+  grid-template-columns: 1fr calc(320px + 8px);
+  background-color: black;
+}
+
+@media screen and (max-width:1250px) {
+  .the-game-screen-grid {
+    grid-template-columns: 1fr calc(160px + 8px);
+  }
+}
+
+.the-game-screen-text {
+  position: relative;
+  background-color: white;
+  min-height: 728px;
+}
+
+@media screen and (max-width:950px) {
+  .the-game-screen-text {
+    background-color: black;
+  }
+}
+
+.the-game-screen-text > div{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+@media screen and (max-width:950px) {
+  .the-game-screen-text > div{
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.room-explanation {
+  width: 95%;
+  border: 4px solid #cda337;
+}
+.room-explanation > p{
+  color: black;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.room-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: black;
+  padding: 2px;
+  color: white;
+}
+
+.difficulty-explanation {
+  width: 95%;
+  border: 4px solid #cda337;
+}
+.difficulty-explanation > p{
+  color: black;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.difficulty-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: #232323;
+  padding: 2px;
+  color: white;
+}
+
+.vitals-explanation {
+  width: 95%;
+  background-color: #cda337;
+  border: 4px solid black;
+}
+.vitals-explanation > p{
+  color: white;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: #232323;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.vitals-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: transparent;
+  padding: 2px;
+  color: #fad019;
+}
+.vitals-explanation > p:first-child > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: transparent;
+  padding: 2px;
+  color: #e2383b;
+}
+
+.status-explanation {
+  width: 95%;
+  border: 4px solid #e5e5e5;
+}
+.status-explanation > p{
+  color: black;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.status-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: black;
+  padding: 2px;
+  color: white;
+}
+
+.sequence-explanation {
+  width: 95%;
+  border: 4px solid #e5e5e5;
+}
+.sequence-explanation > p{
+  color: black;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.sequence-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: black;
+  padding: 2px;
+  color: white;
+}
+
+.prior-explanation {
+  width: 95%;
+  border: 4px solid #e5e5e5;
+}
+.prior-explanation > p{
+  color: black;
+  font-family: 'Prompt', sans-serif;
+  width: calc(100%-8px);
+  background-color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.prior-explanation > p > span{
+  font-family: 'Dungeon Tongue Minus', monospace;
+  background-color: black;
+  padding: 2px;
+  color: white;
+}
+
+.the-game-screen-display {
+  background-color: black;
+  height: 720px;
+  border: 4px solid black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.the-game-screen-display > h3 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+}
+
+.the-game-screen-display > h4 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: #282828;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+}
+
+.the-game-screen-display > h5 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: white;
+  font-size: 10px;
+  text-align: left;
+  margin: 0;
+  padding: 4px;
+  padding-left: 16px;
+}
+
+@media screen and (max-width:1250px) {
+  .the-game-screen-display {
+    height: 360px;
+  }
+  .the-game-screen-display > h3 {
+    font-size: 9px;
+  }
+  .the-game-screen-display > h4 {
+    font-size: 9px;
+  }
+  .the-game-screen-display > h5 {
+    font-size: 5px;
+  }
+}
+
+.the-game-screen-display > .dark-gray-bg {
+  position: static;
+  height: 144px;
+}
+
+.the-game-screen-display > .dark-gray-bg > h3 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+}
+
+.the-game-screen-display > .dark-gray-bg > .basic-flex div {
+  flex: 1
+}
+
+.the-game-screen-display > .dark-gray-bg > .basic-flex * h4 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: #e2383b;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+}
+
+.the-game-screen-display .dark-gray-bg > .basic-flex * h5 {
+  font-family: 'Dungeon Tongue Minus', monospace;
+  color: #fad019;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+}
+
+@media screen and (max-width:1250px) {
+  .the-game-screen-display > .dark-gray-bg {
+    height: 72px;
+  }
+
+  .the-game-screen-display > .dark-gray-bg > h3 {
+    font-size: 9px;
+  }
+
+  .the-game-screen-display > .dark-gray-bg > .basic-flex * h4 {
+    font-size: 9px;
+  }
+
+  .the-game-screen-display .dark-gray-bg > .basic-flex * h5 {
+    font-size: 9px;
+  }
+}
+
+.bar-holder {
+  width: 93.75%;
+  margin: auto;
+}
+
+.red-bar {
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #e2383b;
+}
+
+.yellow-bar {
+  height: 6px;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+  width: 50%;
+  background-color: #fad019;
+}
+
+@media screen and (max-width:1250px) {
+  .red-bar {
+    height: 8px;
+  }
+
+  .yellow-bar {
+    height: 3px;
+  }
+}
+
+.spell-sequence-image {
+  background-image: url('images/MageHand_manual_spellsequence.png');
+  width: 192px;
+  height: 32px;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 64px;
+}
+
+.spell-hand-image {
+  background-image: url('images/MageHand_manual_gamescreenhand.png');
+  width: 192px;
+  height: 192px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 0;
+}
+
+@media screen and (max-width:1250px) {
+  .spell-sequence-image {
+    width: 96px;
+    height: 16px;
+    margin-top: 8px;
+  }
+
+  .spell-hand-image {
+    width: 96px;
+    height: 96px;
+  }
 }

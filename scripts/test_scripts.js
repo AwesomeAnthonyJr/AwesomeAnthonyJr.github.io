@@ -162,6 +162,34 @@ function drawControlsLines() {
     
 }
 
+function drawGameScreenLines() {
+    const svg = document.querySelector('.the-game-screen-foreground > svg');
+    const shapes = Array.from(svg.children);
+    const svgPos = svg.getBoundingClientRect();
+
+    shapes
+    //0 = room name
+    let explanation = document.querySelector('.room-explanation').getBoundingClientRect();
+    let anchor = document.querySelector('.room-anchor').getBoundingClientRect();
+    
+    let x1 = Math.floor(explanation.right - svgPos.left);
+    let x2 = Math.floor(explanation.right - svgPos.left);
+    let x3 = Math.floor(500 - svgPos.left);
+
+    let y1 = Math.floor(explanation.top - svgPos.left);
+    let y2 = Math.floor(explanation.bottom - svgPos.left);
+    let y3 = y2;
+
+    let pointList = shapes[0].points;
+
+    pointList.getItem(0).x = x1;
+    pointList.getItem(1).x = x2;
+    pointList.getItem(2).x = x3;
+    pointList.getItem(0).y = y1;
+    pointList.getItem(1).y = y2;
+    pointList.getItem(2).y = y3;
+}
+
 async function reveal(button) {
     let eye = button.querySelector('.eye-unaware');
     eye.className = 'eye-aware';
@@ -186,6 +214,17 @@ function calculateHeights() {
     document.documentElement.style.setProperty('--controls-b-height', `${temp}px`);
     temp = document.querySelector('.controls-m').scrollWidth;
     document.documentElement.style.setProperty('--controls-m-width', `${temp}px`);
+
+    temp = document.querySelector('.room-explanation').scrollHeight;
+    document.documentElement.style.setProperty('--room-explanation-height', `${temp}px`);
+    temp = document.querySelector('.difficulty-explanation').scrollHeight;
+    document.documentElement.style.setProperty('--difficulty-explanation-height', `${temp}px`);
+    temp = document.querySelector('.vitals-explanation').scrollHeight;
+    document.documentElement.style.setProperty('--vitals-explanation-height', `${temp}px`);
+    temp = document.querySelector('.sequence-explanation').scrollHeight;
+    document.documentElement.style.setProperty('--sequence-explanation-height', `${temp}px`);
+    temp = document.querySelector('.prior-explanation').scrollHeight;
+    document.documentElement.style.setProperty('--prior-explanation-height', `${temp}px`);
 }
 
 obscurer1.addEventListener('click', () => {
@@ -198,13 +237,17 @@ window.addEventListener('resize', () => {
         drawControlsLines();
     });
     bookFloat();
+    //drawGameScreenLines();
 });
 
 window.addEventListener('scroll', () => {
     drawControlsLines();
     bookFloat();
+    calculateHeights();
+    //drawGameScreenLines();
 });
 
 calculateHeights();
 drawControlsLines();
 bookFloat();
+//drawGameScreenLines();
