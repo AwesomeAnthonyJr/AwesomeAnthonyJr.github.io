@@ -479,10 +479,10 @@ swipe_track.addEventListener('touchend', () => {
     if (!is_swiping) return;
     let temp = start_swipe - current_swipe;
 
-    if (temp >= 100){
+    if (temp <= -80){
       if (caro_index < 1) return;
       carouselPrev();
-    } else if (temp <= -100){
+    } else if (temp >= 80){
       if (caro_index > items.length + 1) return;
       carouselNext();
     }
