@@ -244,30 +244,41 @@ body {
 
 .carousel-button-prev {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    font-family: monospace;
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
     cursor: pointer;
     z-index: 2;
-    left: 10px;
+    padding: 10px;
+    height: 100%;
 }
 
 .carousel-button-next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    font-family: monospace;
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
     cursor: pointer;
     z-index: 2;
-    right: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+@media screen and (max-width:460px) {
+    .carousel-button-prev{
+        display: none;
+    }
+    .carousel-button-next{
+        display: none;
+    }
 }
 
 .carousel-button-expand {
@@ -959,6 +970,7 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 4px solid #e5e5e5;
+    background-color: white;
 }
 
 .updates > h2 {
@@ -1285,7 +1297,7 @@ body {
 }
 
 .text-texture > h2 {
-    font-size: 5rem;
+    font-size: 80px;
     font-family: "Prompt", sans-serif;
     font-weight: 700;
     color: black;
@@ -1545,4 +1557,106 @@ body {
 }
 .red {
     color: #e2383b;
+}
+
+.header-tutorials {
+    display: flex;
+    width: 980px;
+}
+
+.header-tutorials > div {
+    flex: 100%;
+    height: 100%;
+}
+
+.header-tutorials > div > h2 {
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: monospace;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width:980px) {
+    .header-tutorials {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .header-tutorials > div > h2 {
+        display: none;
+    }
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.arrow-g {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #44e537;
+}
+.arrow-y {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #fad019;
+}
+.arrow-c {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #38dadd;
+}
+.arrow-m {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #dd3894;
+}
+.arrow-o {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #ec813b;
+}
+.arrow-b {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #3d5ed2;
+}
+.arrow-r {
+    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background-color: #e2383b;
 }

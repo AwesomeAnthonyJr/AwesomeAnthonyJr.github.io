@@ -10,6 +10,7 @@ const background = document.querySelector('.carousel-background');
 const darkeners = document.querySelector('.darkeners');
 const title = document.querySelector('.carousel-title');
 const release = document.querySelector('.carousel-release');
+const swipe_track = document.querySelector('.carousel > .center-children');
 
 let caro_width = getComputedStyle(root).getPropertyValue('--caro-width').trim();
 let mobile_view = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
@@ -18,6 +19,9 @@ let mobile_caro_expanded = false;
 let caro_index = 2;
 let true_caro_gap = 0;
 let caro_offset = window.innerWidth * 0.25;
+let start_swipe = 0;
+let current_swipe = 0;
+let is_swiping = false;
 
 //console.log(true_caro_gap);
 
@@ -200,7 +204,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-XCVB';
       descriptionCR.className =  'carousel-description-credit-XCVB';
       
-      descriptionTX.innerHTML = `<p>XCVB is a roguelike deckbuilder / 2D platformer mashup originally created in for Untitled Game Jam #110. You play as a lone gambler with a deck of magical cards who ascend's Starface's tower in order to reclaim the $5 they are owed. Featuring 16 different movement cards (for active abilities), and 24 different badges (for passive perks), There are countless combinations to discover. The enemies in the tower get stronger as you climb, but on your own terms, as you get to decide if they become faster or stronger each floor. You can play XCVB for free today on its <a href="https://leaflight-studios.itch.io/xcvb">itch.io</a> page, or <a href="https://leaflight-studios.itch.io/">learn more about it here.</a></p>`;
+      descriptionTX.innerHTML = `<p>XCVB is a roguelike deckbuilder / 2D platformer mashup originally created in for Untitled Game Jam #110. You play as a lone gambler with a deck of magical cards who ascend's Starface's tower in order to reclaim the $5 they are owed. Featuring 16 different movement cards (for active abilities), and 24 different badges (for passive perks), There are countless combinations to discover. The enemies in the tower get stronger as you climb, but on your own terms, as you get to decide if they become faster or stronger each floor. You can play XCVB for free today on its <a href="https://leaflight-studios.itch.io/xcvb">itch.io</a> page, or <a href="/games/xcvb">learn more about it here.</a></p>`;
       descriptionCR.innerHTML = `<p>Created By: Anthony D. Salsbury,<br> Owen Hickman, & Samuel Radulski</p>`
       break;
     case 3:
@@ -208,7 +212,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-KillProtocol';
       descriptionCR.className =  'carousel-description-credit-KillProtocol';
 
-      descriptionTX.innerHTML = `<p><span>Kill Protocol is a unique two-color shooter created originally for 1-BIT JAM #4. Set in a future where clones are easily accessible, lives have little meaning, you must pay back $4500 of debt to regain your freedom, and taking assasination jobs to do so. If you have good credit you can spend some on the black market to enhance your loadout. All guns in this dystopian future are linked to ID codes, and can be morphed into others, while reloading directly charges your (in game) bank account. Kill Protocol can be played with a free download from its<a href="https://leaflight-studios.itch.io/kill-protocol"> itch.io </a>page, or<a href="https://leaflight-studios.itch.io/"> learn more about it here.</a></span></p>`;
+      descriptionTX.innerHTML = `<p><span>Kill Protocol is a unique two-color shooter created originally for 1-BIT JAM #4. Set in a future where clones are easily accessible, lives have little meaning, you must pay back $4500 of debt to regain your freedom, and taking assasination jobs to do so. If you have good credit you can spend some on the black market to enhance your loadout. All guns in this dystopian future are linked to ID codes, and can be morphed into others, while reloading directly charges your (in game) bank account. Kill Protocol can be played with a free download from its<a href="https://leaflight-studios.itch.io/kill-protocol"> itch.io </a>page, or<a href="/games/kill-protocol"> learn more about it here.</a></span></p>`;
       descriptionCR.innerHTML = `<p><span>Created By: <br> Anthony D. Salsbury, Jonathan Schultz, <br> Justin Grant, George Dietritch, <br> Owen Hickman, & Samuel Radulski</span></p>`
       
       
@@ -218,7 +222,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-MageHand';
       descriptionCR.className =  'carousel-description-credit-MageHand';
 
-      descriptionTX.innerHTML = `<p>Mage Hand is a knowledge-based exploration game originally created for Pirate Software Game Jam #15. You are a magician who has lost your memory, but retained your ability to cast spells via different hand signs. Explore out of the prison tower and find your way out of the mansion, with secret routes and legendary wizards, reclaim your memory and master some of the 40 different spells to defeat your captor and set yourself free. You can play Mage Hand for free directly from its <a href="https://leaflight-studios.itch.io/mage-hand">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>Mage Hand is a knowledge-based exploration game originally created for Pirate Software Game Jam #15. You are a magician who has lost your memory, but retained your ability to cast spells via different hand signs. Explore out of the prison tower and find your way out of the mansion, with secret routes and legendary wizards, reclaim your memory and master some of the 40 different spells to defeat your captor and set yourself free. You can play Mage Hand for free directly from its <a href="https://leaflight-studios.itch.io/mage-hand">itch.io</a> page, or <a href="/games/mage-hand">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p>Created By: Anthony D. Salsbury, <br> Josh "BB" Bang, Willow Bradshaw</p>`;
 
       break;
@@ -227,7 +231,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-goblinknight';
       descriptionCR.className =  'carousel-description-credit-goblinknight';
 
-      descriptionTX.innerHTML = `<p>goblin knight is an experimental 1st person sword fighting game initially created for the Game Idea Jam 2024. Play as an explorer who has gone too deep in the dark, meeting the goblin knight. It displays an interesting idea with it's aiming-based melee combat. You can download goblin knight for free from its <a href="https://leaflight-studios.itch.io/goblin-knight">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>goblin knight is an experimental 1st person sword fighting game initially created for the Game Idea Jam 2024. Play as an explorer who has gone too deep in the dark, meeting the goblin knight. It displays an interesting idea with it's aiming-based melee combat. You can download goblin knight for free from its <a href="https://leaflight-studios.itch.io/goblin-knight">itch.io</a> page, or <a href="/games/goblin-knight">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p>created by: anthony d. salsbury</p>`;
       break;
     case 6:
@@ -235,7 +239,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-WyrmCanyon';
       descriptionCR.className =  'carousel-description-credit-WyrmCanyon';
 
-      descriptionTX.innerHTML = `<p>Wyrm Canyon on the Pink and Purple Planet is an arcade-style, two-color game originally made for 1-BIT JAM #3. Pilot your sand tank with a unique control scheme and use it's compass to locate the Wyrms of the canyon, all before striking with your smylsknife on foot. If Pink and Purple isn't your style then you can pick a different color palette in the settings as well. You can play it for free directly from Wyrm Canyons <a href="https://leaflight-studios.itch.io/wyrm-canyon">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>Wyrm Canyon on the Pink and Purple Planet is an arcade-style, two-color game originally made for 1-BIT JAM #3. Pilot your sand tank with a unique control scheme and use it's compass to locate the Wyrms of the canyon, all before striking with your smylsknife on foot. If Pink and Purple isn't your style then you can pick a different color palette in the settings as well. You can play it for free directly from Wyrm Canyon's <a href="https://leaflight-studios.itch.io/wyrm-canyon">itch.io</a> page, or <a href="/games/wyrm-canyon">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p><span>Created By:</span><br> Anthony D. Salsbury</p>`;
       break;
     case 7:
@@ -243,7 +247,7 @@ function updateCaroDescription() {
       descriptionTX.className =  'carousel-description-text-SHAHARAZON';
       descriptionCR.className =  'carousel-description-credit-SHAHARAZON';
 
-      descriptionTX.innerHTML = `<p>SHAHARAZON is a first person "grenadier" set in the dark future of 2424, originally created for Acerola Jam 0. Play through a simulation of the war of the future as a cyborg super-soldier, trained for combat in grenade-only situations. You can play SHAHARAZON for free by downloading it from its <a href="https://leaflight-studios.itch.io/agj0project">itch.io</a> page, or <a href="https://leaflight-studios.itch.io">learn more here</a></p>`;
+      descriptionTX.innerHTML = `<p>SHAHARAZON is a first person "grenadier" set in the dark future of 2424, originally created for Acerola Jam 0. Play through a simulation of the war of the future as a cyborg super-soldier, trained for combat in grenade-only situations. You can play SHAHARAZON for free by downloading it from its <a href="https://leaflight-studios.itch.io/agj0project">itch.io</a> page, or <a href="/games/shaharazon">learn more here</a></p>`;
       descriptionCR.innerHTML = `<p><span>created_by:</span> <br> ANTHONY D. SALSBURY</p>`;
 
       break;
@@ -458,6 +462,30 @@ mobileExpandButton.addEventListener('click', () => {
   } else {
     expandMobileDesc();
   }
+});
+
+swipe_track.addEventListener('touchstart', (e) => {
+    start_swipe = e.touches[0].clientX;
+    current_swipe = start_swipe;
+    is_swiping = true;
+});
+
+swipe_track.addEventListener('touchmove', (e) => {
+    if (!is_swiping) return;
+    current_swipe = e.touches[0].clientX;
+});
+
+swipe_track.addEventListener('touchend', () => {
+    if (!is_swiping) return;
+    let temp = start_swipe - current_swipe;
+
+    if (temp >= 100){
+      if (caro_index < 1) return;
+      carouselPrev();
+    } else if (temp <= -100){
+      if (caro_index > items.length + 1) return;
+      carouselNext();
+    }
 });
 
 window.addEventListener('resize', () => {
