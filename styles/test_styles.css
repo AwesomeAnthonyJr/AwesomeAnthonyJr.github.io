@@ -49,6 +49,8 @@ body {
 .header > .logo {
     width: 100px;
     height: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .header > h1{
