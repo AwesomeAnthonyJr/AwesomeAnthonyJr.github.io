@@ -28,7 +28,8 @@ superHeader.innerHTML = `
         <li><a href="/games/xcvb">XCVB</a></li>
     </ul>
     <ul class="menu-m">
-        <li><a href="index.html">JOURNAL</a></li>
+        <li><a href="/journal/">JOURNAL</a></li>
+        <li><a href="/journal/on-shaharazon">On SHAHARAZON</a></li>
     </ul>
     <ul class="menu-o">
         <li><a href="index.html">EXTRAS</a></li>
