@@ -134,3 +134,26 @@ body {
     margin-left: 40px;
     margin-right: 40px;
 }
+
+.page > p > span {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: 400;
+    color: #4c7dff;
+    background-color: #282828;
+    padding: 8px;
+}
+
+.page > h3 {
+    font-size: 2rem;
+    text-align: left;
+    font-family: "Prompt", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #282828;
+    margin-top: 0;
+    margin-left: 40px;
+    border-bottom: 4px solid #282828;
+    width: fit-content;
+    padding-right: 20px;
+}

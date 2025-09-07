@@ -41,13 +41,51 @@
                     created a little community of its own.
                 </p>
                 <br>
+                <h3>Development</h3>
                 <p> The development of SHAHARAZON began with the base idea of a first person shooter without guns, only grenades. Everything else about the game would be
                     determined during the active development, which led to an extremely messy project structure. For a little background, I began learning game development
                     with the Unity game engine, but when they announced their "charging developers cents per download" pricing plan, I jumped ship to Godot - which I had heard
                     great things about. SHAHARAZON was only my 3rd ever finished Godot project, and was signigicantly larger in scope than the small games I had finished in the
                     engine to learn the basics. SHAHARAZON was integral to growing my game development skills, and I did a lot of things that I would today look back on and
-                    say I did incorrectly. Any attempts I have made to add to the game or update it have failed as a result of my poor practices at the time.
-
+                    say I did incorrectly. For example, here's some tips that I learned through making the mistakes during the creation of SHAHARAZON:
+                </p>
+                <br>
+                <p> Do not hardcode your animations! Use Godot's built-in animation player if you can, it's very useful. If you have any animation with a variable amount
+                    of time between the frames, it can make sense to hardcode it, but in that case, don't create and delete a timer each time, just use a timer node if you find
+                    yourself creating and deleting timers over and over again.
+                </p>
+                <br>
+                <p> Using <span>free()</span> is a bad idea unless you seriously know what you are doing. If you're running into issues with <span>queue_free()</span> and they 
+                    go away with <span>free()</span> like I had, they don't actually stop happening, just the error messages go away. A useful tip I've found to account
+                    for memory leaks in my projects every since I learned about SHAHARAZON's memory leak is to use the <span>print_orphan_nodes()</span> function in your
+                    main script in the process call, so then if ever there is an orphaned node (Godot's version of the memory leak) then you'll immediately know while testing,
+                    rather than finding out months later when you learn why it's running so slow.
+                </p>
+                <br>
+                <p> When you add audio settings (and you should), DO NOT hardcode your volume changing, there's a very simple built in feature called the audio bus which if I had used would've
+                    vastly improved the sound quality of the game.
+                </p>
+                <br>
+                <p> Unless any feature of your game is very complicated, its script should be under 1000 lines long, as a general rule of thumb, it's best to split those up.
+                    For example, I had my UI elements all tied to my player script. It made sense at the time, but ultimately bloated the player script and forced a lot of coupling
+                    between two distinct aspects of the game. In hindsight for this example, I should've had the player script reference a UI script which manages everything in the
+                    UI, and sending it the information when something updates. Heavy coupling can kill any long-term development in your project (I would know).
+                </p>
+                <br>
+                <p> On a more positive note, there's a lot of things that I did with the project that I would consider helpful. For example, I made heavy use of the LEGOs that I had
+                    in my home to quickly prototype stages. As for a fun fact, the enemies in SHAHARAZON are actually pictures of LEGO robot-things that I built and posed to act as the enemies
+                    because I knew I wouldn't be able to make the models I wanted in Blender fast enough for the game jam's timeframe (2 weeks). So I took pictures, shrunk them way down,
+                    and limited the color palette of them, giving them a pixel-art "vibe" while being distinctly not "true" pixel-art. This did work in the game's favor, especially with
+                    the theme of aberration being core to the game itself. Much of SHAHARAZON's style is actually a result of having limited art tools and time to make the game. Most
+                    textures were of pictures I took, and lots of sprites were modified real images. The entire game is rendered at half of it's actual resolution and is then scaled-up
+                    in order to make it look more "retro", making for the DOOM-like style of the game I was going for, while also obscuring the faults in the visuals. Having this
+                    somewhat consistent style helped SHAHARAZON stand out amongst the other jam submissions. Having a distinct style in any case will always help your game have an identity
+                    of its own.
+                </p>
+                <h3>Reception</h3>
+                <p> Despite its flaws under the hood, SHAHARAZON was very well recieved for what it was. it placed #81 overall out of 930 entries, and was enjoyed by most who
+                    had played it. 
+                </p>
             </div>
         </div>
 
