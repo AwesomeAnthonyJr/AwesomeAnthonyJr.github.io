@@ -1,0 +1,118 @@
+body {
+  background-color: white;
+  margin: 0 0 0 0;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100vw;
+    z-index: 10;
+}
+
+.logo {
+    background-image: url('images/LLSLogo23NoText\(1\).svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.header > .logo {
+    width: 100px;
+    height: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.header > h1{
+    font-size: 35px;
+    font-family: "Prompt", sans-serif;
+    color: white;
+    padding-left: 12px;
+    margin: 0;
+    background-color: black;
+    width: 168px;
+}
+
+.header > h2 {
+    font-size: 70px;
+    font-family: "Prompt", sans-serif;
+    color: #e2383b;
+    padding-left: 12px;
+    margin: 0;
+    background-color: black;
+}
+
+@media screen and (max-width:730px) {
+    .header > h2{
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .header > h2{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .header > h2{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .header {
+      background-color: black;
+    }
+    .header > h1{
+        font-size: 35px;
+    }
+    .header > h2{
+        font-size: 35px;
+        display: none;
+    }
+}
+
+.page {
+    width: 95%;
+    margin: auto;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: "Prompt", sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+p {
+    font-size: 2rem;
+    font-family: "Prompt", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+}
+
+ul {
+    font-size: 2rem;
+    font-family: "Prompt", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+}
+
+.itch {
+    color: #fa5c5c;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

@@ -16,7 +16,7 @@ superFooter.innerHTML = `
         <li><a href="/">HOME</a></li>
         <li><a href="/">ABOUT</a></li>
         <li><a href="/games/">GAMES</a></li>
-        <li><a href="/">JOURNAL</a></li>
+        <li><a href="/journal/">JOURNAL</a></li>
         <li><a href="/">EXTRAS</a></li>
         <li><a href="/">SECRETS</a></li>
     </ul>

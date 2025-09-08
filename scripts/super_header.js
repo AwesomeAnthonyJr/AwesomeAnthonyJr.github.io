@@ -38,7 +38,7 @@ superHeader.innerHTML = `
         <li><a href="index.html">SECRETS</a></li>
     </ul>
     <ul class="menu-r">
-        <li><a href="index.html">LINKS</a></li>
+        <li><a href="/links/">LINKS</a></li>
         <li><a href="https://leaflight-studios.itch.io/">itch.io</a></li>
     </ul>
 </div>
