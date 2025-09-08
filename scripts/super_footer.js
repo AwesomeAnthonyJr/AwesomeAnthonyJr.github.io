@@ -14,11 +14,12 @@ superFooter.innerHTML = `
 <div class="super-footer-grid">
     <ul class="super-footer-nav">
         <li><a href="/">HOME</a></li>
-        <li><a href="/">ABOUT</a></li>
+        <li><a href="/about/">ABOUT</a></li>
         <li><a href="/games/">GAMES</a></li>
         <li><a href="/journal/">JOURNAL</a></li>
         <li><a href="/">EXTRAS</a></li>
         <li><a href="/">SECRETS</a></li>
+        <li><a href="/links/">LINKS</a></li>
     </ul>
     <ul class="super-footer-links">
         <li><a href="https://leaflight-studios.itch.io/">itch.io|LeafLight Studios</a></li>

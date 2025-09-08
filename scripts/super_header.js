@@ -16,7 +16,7 @@ superHeader.innerHTML = `
         <li><a href="/">HOME</a></li>
     </ul>
     <ul class="menu-y">
-        <li><a href="index.html">ABOUT</a></li>
+        <li><a href="/about/">ABOUT</a></li>
     </ul>
     <ul class="menu-c">
         <li><a href="/games/">GAMES</a></li>
