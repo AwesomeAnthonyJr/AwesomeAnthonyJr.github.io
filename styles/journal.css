@@ -157,6 +157,20 @@ body {
     }
 }
 
+@media screen and (max-width:650px) {
+    .article > .title {
+        font-size: 2rem;
+    }
+
+    .article > .author {
+        font-size: 1.25rem;
+    }
+
+    .article > .description {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width:900px) {
     .article {
     width: 100%;
