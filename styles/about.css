@@ -172,6 +172,8 @@ body {
 }
 
 .signature {
+    display: block;
+    width: 100%;
     text-align: right;
 }
 
