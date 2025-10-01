@@ -68,6 +68,10 @@
         background-image: url('images/XCVB_display_360_480.png');
     }
 
+    .dui {
+        background-image: url('images/test_360_480.png');
+    }
+
     .carousel-group {
         top: 40px;
     }
@@ -111,6 +115,10 @@
 
     .xcvb {
         background-image: url('images/XCVB_display_300_400.png');
+    }
+
+    .dui {
+        background-image: url('images/test_300_400.png');
     }
 
     .carousel-group {
@@ -469,7 +477,13 @@ body {
     top: 30px;
 }
 
-
+.carousel-description-text:has(.carousel-description-text-DUI) {
+    top: 70px;
+}
+.carousel-description-credit:has(.carousel-description-credit-DUI) {
+    z-index: 3;
+    top: 70px;
+}
 
 .carousel-description-text-SHAHARAZON {
     width: 100%;
@@ -937,6 +951,80 @@ body {
     100% {
         transform: translate(128px, 128px);
     }
+}
+
+.carousel-description-text-DUI {
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 9px 4px 4px 4px;
+    border-image-source: url('images/SHAHARAZON_border_image_1.png');
+    border-image-slice: 9 26 4 4;
+    border-image-repeat: repeat;
+    border-image-width: 9px 26px 4px 4px;
+    image-rendering: pixelated;
+    padding: 4px;
+    position: absolute;
+    top: -9px;
+    left: -4px;
+    background-color: #173ff9;
+}
+
+.carousel-description-text-DUI * {
+    color: white;
+    font-family: "VCR", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size));
+    pointer-events: all;
+    z-index: 5;
+    margin-top: 0px;
+}
+
+.carousel-description-text-DUI * > a{
+    color: #e2383b;
+}
+
+.carousel-description-text-DUI * > a:hover{
+    color: #44e537;
+}
+
+
+.carousel-description-credit-DUI {
+    width: 100%;
+    height: 80px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 9px 4px 4px 4px;
+    border-image-source: url('images/SHAHARAZON_border_image_1.png');
+    border-image-slice: 9 26 4 4;
+    border-image-repeat: repeat;
+    border-image-width: 9px 26px 4px 4px;
+    image-rendering: pixelated;
+    padding: 4px;
+    position: absolute;
+    top: -50px;
+    left: 60px;
+    background-color: white;
+}
+
+.carousel-description-credit-DUI * {
+    color: black;
+    font-family: "VCR", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--desk-description-font-size));
+    pointer-events: all;
+    z-index: 5;
+    margin-top: calc(var(--desk-description-font-size) * -1 - 7px);
+}
+
+.carousel-description-credit-DUI * > span{
+    color: #282828;
+    background-color: #e5e5e5;
+    border: 1px solid #b4b4b4;
+    border-bottom-width: 0;
 }
 
 .carousel-description-background-null {
