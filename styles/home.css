@@ -1688,15 +1688,25 @@ body {
     background-color: black;
 }
 
-.arrow-g {
+.arrow-down {
     clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
     overflow: hidden;
     height: 30px;
     width: 100%;
     margin-top: 4px;
     margin-bottom: 8px;
-    background-color: #44e537;
+    border: none;
 }
+
+.button-g {
+    background-color: #44e537;
+    border: none;
+}
+.button-g:hover {
+    background-color: #76ff69;
+    border: none;
+}
+
 .arrow-y {
     clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
     overflow: hidden;
