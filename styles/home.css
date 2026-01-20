@@ -1686,6 +1686,7 @@ body {
 
 .bg-black {
     background-color: black;
+    margin-bottom: -5px;
 }
 
 .arrow-down {
@@ -1693,71 +1694,82 @@ body {
     overflow: hidden;
     height: 30px;
     width: 100%;
-    margin-top: 4px;
+    margin-top: 8px;
     margin-bottom: 8px;
+    background-color: black;
+    border: none;
+}
+
+.arrow-up {
+    clip-path: polygon(20% 90%, 50% 00%, 80% 90%);
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: black;
     border: none;
 }
 
 .button-g {
     background-color: #44e537;
     border: none;
-}
-.button-g:hover {
-    background-color: #76ff69;
-    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.arrow-y {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
-    width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+.button-y {
     background-color: #fad019;
-}
-.arrow-c {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
+    border: none;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.button-c {
     background-color: #38dadd;
-}
-.arrow-m {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
+    border: none;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.button-m {
     background-color: #dd3894;
-}
-.arrow-o {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
+    border: none;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.button-o {
     background-color: #ec813b;
-}
-.arrow-b {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
+    border: none;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.button-b {
     background-color: #3d5ed2;
-}
-.arrow-r {
-    clip-path: polygon(20% 0%, 50% 90%, 80% 0%);
-    overflow: hidden;
-    height: 30px;
+    border: none;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 8px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.button-r {
     background-color: #e2383b;
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

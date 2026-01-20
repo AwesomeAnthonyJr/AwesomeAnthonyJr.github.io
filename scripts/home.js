@@ -11,6 +11,20 @@ const darkeners = document.querySelector('.darkeners');
 const title = document.querySelector('.carousel-title');
 const release = document.querySelector('.carousel-release');
 const swipe_track = document.querySelector('.carousel > .center-children');
+const superButtonG = document.querySelector('.header-g');
+const superButtonY = document.querySelector('.header-c');
+const superButtonC = document.querySelector('.header-y');
+const superButtonM = document.querySelector('.header-m');
+const superButtonO = document.querySelector('.header-o');
+const superButtonB = document.querySelector('.header-b');
+const superButtonR = document.querySelector('.header-r');
+const arrowButtonG = document.querySelector('.button-g');
+const arrowButtonY = document.querySelector('.button-c');
+const arrowButtonC = document.querySelector('.button-y');
+const arrowButtonM = document.querySelector('.button-m');
+const arrowButtonO = document.querySelector('.button-o');
+const arrowButtonB = document.querySelector('.button-b');
+const arrowButtonR = document.querySelector('.button-r');
 
 let caro_width = getComputedStyle(root).getPropertyValue('--caro-width').trim();
 let mobile_view = getComputedStyle(root).getPropertyValue('--mobile-view').trim();
@@ -520,6 +534,41 @@ window.addEventListener('resize', () => {
     unexpandMobileDesc();
     mobile_caro_expanded = false;
   }
+});
+
+superButtonG.addEventListener('mouseover', () => {
+  if (!arrowButtonG.matches(':hover')) {
+    arrowButtonG.style.backgroundColor = "#76ff69";
+    superButtonG.style.backgroundColor = "#76ff69";
+  }
+  
+});
+superButtonG.addEventListener('mouseout', () => {
+  if (!arrowButtonG.matches(':hover')) {
+    arrowButtonG.style.backgroundColor = "#44e537";
+    superButtonG.style.backgroundColor = "#44e537";
+  }
+});
+arrowButtonG.addEventListener('mouseover', () => {
+  if (!superButtonG.matches(':hover')) {
+    arrowButtonG.style.backgroundColor = "#76ff69";
+    superButtonG.style.backgroundColor = "#76ff69";
+  }
+});
+arrowButtonG.addEventListener('mouseout', () => {
+  if (!superButtonG.matches(':hover')) {
+    arrowButtonG.style.backgroundColor = "#44e537";
+    superButtonG.style.backgroundColor = "#44e537";
+  }
+});
+arrowButtonG.addEventListener('click', () => {
+  console.log("green click arrow");
+  if (header_index == 1) {
+    header_index = 0;
+  } else {
+    header_index = 1;
+  }
+  updateHeaderLists();
 });
 
 //calcBeBoldHeight();
