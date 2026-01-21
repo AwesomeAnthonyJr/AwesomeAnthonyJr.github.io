@@ -93,7 +93,7 @@ body {
     display: flex;
 }
 
-.profile > img {
+.profile > div > img {
     width: 200px;
     height: 200px;
     max-width: 200px;
@@ -101,15 +101,25 @@ body {
     background-color: orange;
     flex-grow: 0;
     flex-shrink: 0;
+    border-bottom: 4px solid #fad019;
+    border-right: 4px solid #fad019;
 }
 
-.profile > div:has(h1) {
-    width: 30%;
+.profile > div:has(.namespace) {
+    width: 204px;
     flex-grow: 0;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.profile > div > h1 {
+.namespace {
+    position: relative;
+    padding: 4px;
+    flex-grow: 0;
+}
+
+.namespace > h1 {
     font-size: 2rem;
     font-family: "Prompt", sans-serif;
     font-style: bold;
@@ -118,11 +128,46 @@ body {
     margin: 0;
     width: auto;
     height: auto;
-    padding: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.namespace > h3 {
+    font-size: 8rem;
+    font-family: serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #fad019;
+    margin: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    z-index: 1;
+    text-shadow:
+        4px 4px 0 #c89e00,
+        -4px 4px 0 #c89e00,
+        4px -4px 0 #c89e00,
+        -4px -4px 0 #c89e00,
+        4px 0px 0 #c89e00,
+        -4px 0px 0 #c89e00,
+        0px -4px 0 #c89e00,
+        0px 4px 0 #c89e00,
+        2px 2px 0 #c89e00,
+        -2px 2px 0 #c89e00,
+        2px -2px 0 #c89e00,
+        -2px -2px 0 #c89e00,
+        2px 0px 0 #c89e00,
+        -2px 0px 0 #c89e00,
+        0px -2px 0 #c89e00,
+        0px 2px 0 #c89e00
+    ;
+    overflow: visible;
 }
 
 .profile > div > h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Prompt", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -152,6 +197,8 @@ body {
     color: black;
     background-color: #e5e5e5;
     width: 100%;
+    margin-top: -4px;
+    margin-bottom: -4px;
 }
 
 .profile > div > .description > p {
@@ -246,9 +293,10 @@ body {
         flex-direction: column;
     }
 
-    .profile > div:has(h1) {
+    .profile > div:has(.namespace) {
         width: 100%;
         flex-grow: 0;
         flex-shrink: 0;
+        flex-direction: row;
     }
 }
