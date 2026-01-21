@@ -1746,6 +1746,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .button-c > div {
     background-color: #38dadd;
@@ -1758,6 +1759,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .button-m > div {
     background-color: #dd3894;
@@ -1770,6 +1772,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .button-o > div {
     background-color: #ec813b;
@@ -1782,6 +1785,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .button-b > div {
     background-color: #3d5ed2;
@@ -1794,6 +1798,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .button-r > div {
     background-color: #e2383b;
