@@ -33,7 +33,7 @@ superHeader.innerHTML = `
         <li><a href="/journal/on-shaharazon">On SHAHARAZON</a></li>
     </ul>
     <ul class="menu-o">
-        <li><a href="index.html">EXTRAS</a></li>
+        <li><a href="/extras/">EXTRAS</a></li>
     </ul>
     <ul class="menu-b">
         <li><a href="index.html">SECRETS</a></li>

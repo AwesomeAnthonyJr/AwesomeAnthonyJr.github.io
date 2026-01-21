@@ -17,7 +17,7 @@ superFooter.innerHTML = `
         <li><a href="/about/">ABOUT</a></li>
         <li><a href="/games/">GAMES</a></li>
         <li><a href="/journal/">JOURNAL</a></li>
-        <li><a href="/">EXTRAS</a></li>
+        <li><a href="/extras/">EXTRAS</a></li>
         <li><a href="/">SECRETS</a></li>
         <li><a href="/links/">LINKS</a></li>
     </ul>
@@ -29,6 +29,7 @@ superFooter.innerHTML = `
         <li><a href="https://leaflight-studios.itch.io/mage-hand">itch.io|Mage Hand</a></li>
         <li><a href="https://leaflight-studios.itch.io/kill-protocol">itch.io|Kill Protocol</a></li>
         <li><a href="https://leaflight-studios.itch.io/xcvb">itch.io|XCVB</a></li>
+        <li><a href="https://leaflight-studios.itch.io/dui">itch.io|DUI: Drive Until Impact</a></li>
     </ul>
 </div>
 <div class ="super-footer-bottom">Website by Anthony D. Salsbury</div>
