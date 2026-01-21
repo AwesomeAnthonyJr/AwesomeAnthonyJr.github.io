@@ -17,6 +17,7 @@ superHeader.innerHTML = `
     </ul>
     <ul class="menu-y">
         <li><a href="/about/">ABOUT</a></li>
+        <li><a href="/about/#AnthonyDSalsbury">Anthony D. Salsbury</a></li>
     </ul>
     <ul class="menu-c">
         <li><a href="/games/">GAMES</a></li>
