@@ -24,6 +24,7 @@ body {
     height: 100px;
     flex-grow: 0;
     flex-shrink: 0;
+    display: block;
 }
 
 .header > h1{

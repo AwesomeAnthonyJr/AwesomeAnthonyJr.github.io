@@ -1268,6 +1268,7 @@ body {
     background-image: url('images/LLSLogo23NoText\(1\).svg');
     background-repeat: no-repeat;
     background-size: contain;
+    display: block;
 }
 
 .header > .logo {
