@@ -1698,6 +1698,7 @@ body {
     margin-bottom: 8px;
     background-color: black;
     border: none;
+    transition: clip-path 0.15s ease-in-out;
 }
 
 .arrow-up {
@@ -1709,67 +1710,91 @@ body {
     margin-bottom: 8px;
     background-color: black;
     border: none;
+    transition: clip-path 0.15s ease-in-out;
 }
 
 .button-g {
-    background-color: #44e537;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+}
+.button-g > div {
+    background-color: #44e537;
 }
 
 .button-y {
-    background-color: #fad019;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+}
+.button-y > div {
+    background-color: #fad019;
 }
 
 .button-c {
-    background-color: #38dadd;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+.button-c > div {
+    background-color: #38dadd;
 }
 
 .button-m {
-    background-color: #dd3894;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+.button-m > div {
+    background-color: #dd3894;
 }
 
 .button-o {
-    background-color: #ec813b;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+.button-o > div {
+    background-color: #ec813b;
 }
 
 .button-b {
-    background-color: #3d5ed2;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
+.button-b > div {
+    background-color: #3d5ed2;
+}
 
 .button-r {
-    background-color: #e2383b;
+    background-color: black;
     border: none;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+.button-r > div {
+    background-color: #e2383b;
 }

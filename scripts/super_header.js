@@ -59,6 +59,7 @@ const headerListO = document.querySelector('.menu-o');
 const headerListB = document.querySelector('.menu-b');
 const headerListR = document.querySelector('.menu-r');
 let header_index = 0;
+let on_homepage = false;
 
 function updateHeaderLists() {
   headerListG.style.maxHeight = '0';
@@ -91,6 +92,10 @@ function updateHeaderLists() {
     case 7:
       headerListR.style.maxHeight = '100vw';
       break;
+  }
+
+  if (on_homepage == true) {
+    updateArrowShapes();
   }
 }
 

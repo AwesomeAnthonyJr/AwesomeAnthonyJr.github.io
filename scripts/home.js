@@ -12,15 +12,15 @@ const title = document.querySelector('.carousel-title');
 const release = document.querySelector('.carousel-release');
 const swipe_track = document.querySelector('.carousel > .center-children');
 const superButtonG = document.querySelector('.header-g');
-const superButtonY = document.querySelector('.header-c');
-const superButtonC = document.querySelector('.header-y');
+const superButtonY = document.querySelector('.header-y');
+const superButtonC = document.querySelector('.header-c');
 const superButtonM = document.querySelector('.header-m');
 const superButtonO = document.querySelector('.header-o');
 const superButtonB = document.querySelector('.header-b');
 const superButtonR = document.querySelector('.header-r');
 const arrowButtonG = document.querySelector('.button-g');
-const arrowButtonY = document.querySelector('.button-c');
-const arrowButtonC = document.querySelector('.button-y');
+const arrowButtonY = document.querySelector('.button-y');
+const arrowButtonC = document.querySelector('.button-c');
 const arrowButtonM = document.querySelector('.button-m');
 const arrowButtonO = document.querySelector('.button-o');
 const arrowButtonB = document.querySelector('.button-b');
@@ -470,6 +470,44 @@ function unexpandMobileDesc() {
   mobile_caro_expanded = false;
 }
 
+function updateArrowShapes() {
+  if (header_index == 1) {
+    arrowButtonG.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonG.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 2) {
+    arrowButtonC.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonC.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 3) {
+    arrowButtonY.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonY.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 4) {
+    arrowButtonM.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonM.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 5) {
+    arrowButtonO.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonO.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 6) {
+    arrowButtonB.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonB.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+  if (header_index == 7) {
+    arrowButtonR.firstElementChild.style.clipPath = "polygon(20% 90%, 50% 00%, 80% 90%)";
+  } else {
+    arrowButtonR.firstElementChild.style.clipPath = "polygon(20% 0%, 50% 90%, 80% 0%)";
+  }
+}
+
 prevButton.addEventListener('click', () => {
   if (caro_index < 1) return;
   carouselPrev();
@@ -538,31 +576,29 @@ window.addEventListener('resize', () => {
 
 superButtonG.addEventListener('mouseover', () => {
   if (!arrowButtonG.matches(':hover')) {
-    arrowButtonG.style.backgroundColor = "#76ff69";
+    arrowButtonG.firstElementChild.style.backgroundColor = "#76ff69";
     superButtonG.style.backgroundColor = "#76ff69";
   }
-  
 });
 superButtonG.addEventListener('mouseout', () => {
   if (!arrowButtonG.matches(':hover')) {
-    arrowButtonG.style.backgroundColor = "#44e537";
+    arrowButtonG.firstElementChild.style.backgroundColor = "#44e537";
     superButtonG.style.backgroundColor = "#44e537";
   }
 });
 arrowButtonG.addEventListener('mouseover', () => {
   if (!superButtonG.matches(':hover')) {
-    arrowButtonG.style.backgroundColor = "#76ff69";
+    arrowButtonG.firstElementChild.style.backgroundColor = "#76ff69";
     superButtonG.style.backgroundColor = "#76ff69";
   }
 });
 arrowButtonG.addEventListener('mouseout', () => {
   if (!superButtonG.matches(':hover')) {
-    arrowButtonG.style.backgroundColor = "#44e537";
+    arrowButtonG.firstElementChild.style.backgroundColor = "#44e537";
     superButtonG.style.backgroundColor = "#44e537";
   }
 });
 arrowButtonG.addEventListener('click', () => {
-  console.log("green click arrow");
   if (header_index == 1) {
     header_index = 0;
   } else {
@@ -571,7 +607,207 @@ arrowButtonG.addEventListener('click', () => {
   updateHeaderLists();
 });
 
+superButtonC.addEventListener('mouseover', () => {
+  if (!arrowButtonC.matches(':hover')) {
+    arrowButtonC.firstElementChild.style.backgroundColor = "#6affff";
+    superButtonC.style.backgroundColor = "#6affff";
+  }
+});
+superButtonC.addEventListener('mouseout', () => {
+  if (!arrowButtonC.matches(':hover')) {
+    arrowButtonC.firstElementChild.style.backgroundColor = "#38dadd";
+    superButtonC.style.backgroundColor = "#38dadd";
+  }
+});
+arrowButtonC.addEventListener('mouseover', () => {
+  if (!superButtonC.matches(':hover')) {
+    arrowButtonC.firstElementChild.style.backgroundColor = "#6affff";
+    superButtonC.style.backgroundColor = "#6affff";
+  }
+});
+arrowButtonC.addEventListener('mouseout', () => {
+  if (!superButtonC.matches(':hover')) {
+    arrowButtonC.firstElementChild.style.backgroundColor = "#38dadd";
+    superButtonC.style.backgroundColor = "#38dadd";
+  }
+});
+arrowButtonC.addEventListener('click', () => {
+  if (header_index == 2) {
+    header_index = 0;
+  } else {
+    header_index = 2;
+  }
+  updateHeaderLists();
+});
+
+superButtonY.addEventListener('mouseover', () => {
+  if (!arrowButtonY.matches(':hover')) {
+    arrowButtonY.firstElementChild.style.backgroundColor = "#ffff4b";
+    superButtonY.style.backgroundColor = "#ffff4b";
+  }
+});
+superButtonY.addEventListener('mouseout', () => {
+  if (!arrowButtonY.matches(':hover')) {
+    arrowButtonY.firstElementChild.style.backgroundColor = "#fad019";
+    superButtonY.style.backgroundColor = "#fad019";
+  }
+});
+arrowButtonY.addEventListener('mouseover', () => {
+  if (!superButtonY.matches(':hover')) {
+    arrowButtonY.firstElementChild.style.backgroundColor = "#ffff4b";
+    superButtonY.style.backgroundColor = "#ffff4b";
+  }
+});
+arrowButtonY.addEventListener('mouseout', () => {
+  if (!superButtonY.matches(':hover')) {
+    arrowButtonY.firstElementChild.style.backgroundColor = "#fad019";
+    superButtonY.style.backgroundColor = "#fad019";
+  }
+});
+arrowButtonY.addEventListener('click', () => {
+  if (header_index == 3) {
+    header_index = 0;
+  } else {
+    header_index = 3;
+  }
+  updateHeaderLists();
+});
+
+superButtonM.addEventListener('mouseover', () => {
+  if (!arrowButtonM.matches(':hover')) {
+    arrowButtonM.firstElementChild.style.backgroundColor = "#ff65c7";
+    superButtonM.style.backgroundColor = "#ff65c7";
+  }
+});
+superButtonM.addEventListener('mouseout', () => {
+  if (!arrowButtonM.matches(':hover')) {
+    arrowButtonM.firstElementChild.style.backgroundColor = "#dd3894";
+    superButtonM.style.backgroundColor = "#dd3894";
+  }
+});
+arrowButtonM.addEventListener('mouseover', () => {
+  if (!superButtonM.matches(':hover')) {
+    arrowButtonM.firstElementChild.style.backgroundColor = "#ff65c7";
+    superButtonM.style.backgroundColor = "#ff65c7";
+  }
+});
+arrowButtonM.addEventListener('mouseout', () => {
+  if (!superButtonM.matches(':hover')) {
+    arrowButtonM.firstElementChild.style.backgroundColor = "#dd3894";
+    superButtonM.style.backgroundColor = "#dd3894";
+  }
+});
+arrowButtonM.addEventListener('click', () => {
+  if (header_index == 4) {
+    header_index = 0;
+  } else {
+    header_index = 4;
+  }
+  updateHeaderLists();
+});
+
+superButtonO.addEventListener('mouseover', () => {
+  if (!arrowButtonO.matches(':hover')) {
+    arrowButtonO.firstElementChild.style.backgroundColor = "#ffb36d";
+    superButtonO.style.backgroundColor = "#ffb36d";
+  }
+});
+superButtonO.addEventListener('mouseout', () => {
+  if (!arrowButtonO.matches(':hover')) {
+    arrowButtonO.firstElementChild.style.backgroundColor = "#ec813b";
+    superButtonO.style.backgroundColor = "#ec813b";
+  }
+});
+arrowButtonO.addEventListener('mouseover', () => {
+  if (!superButtonO.matches(':hover')) {
+    arrowButtonO.firstElementChild.style.backgroundColor = "#ffb36d";
+    superButtonO.style.backgroundColor = "#ffb36d";
+  }
+});
+arrowButtonO.addEventListener('mouseout', () => {
+  if (!superButtonO.matches(':hover')) {
+    arrowButtonO.firstElementChild.style.backgroundColor = "#ec813b";
+    superButtonO.style.backgroundColor = "#ec813b";
+  }
+});
+arrowButtonO.addEventListener('click', () => {
+  if (header_index == 5) {
+    header_index = 0;
+  } else {
+    header_index = 5;
+  }
+  updateHeaderLists();
+});
+
+superButtonB.addEventListener('mouseover', () => {
+  if (!arrowButtonB.matches(':hover')) {
+    arrowButtonB.firstElementChild.style.backgroundColor = "#6f90ff";
+    superButtonB.style.backgroundColor = "#6f90ff";
+  }
+});
+superButtonB.addEventListener('mouseout', () => {
+  if (!arrowButtonB.matches(':hover')) {
+    arrowButtonB.firstElementChild.style.backgroundColor = "#3d5ed2";
+    superButtonB.style.backgroundColor = "#3d5ed2";
+  }
+});
+arrowButtonB.addEventListener('mouseover', () => {
+  if (!superButtonB.matches(':hover')) {
+    arrowButtonB.firstElementChild.style.backgroundColor = "#6f90ff";
+    superButtonB.style.backgroundColor = "#6f90ff";
+  }
+});
+arrowButtonB.addEventListener('mouseout', () => {
+  if (!superButtonB.matches(':hover')) {
+    arrowButtonB.firstElementChild.style.backgroundColor = "#3d5ed2";
+    superButtonB.style.backgroundColor = "#3d5ed2";
+  }
+});
+arrowButtonB.addEventListener('click', () => {
+  if (header_index == 6) {
+    header_index = 0;
+  } else {
+    header_index = 6;
+  }
+  updateHeaderLists();
+});
+
+superButtonR.addEventListener('mouseover', () => {
+  if (!arrowButtonR.matches(':hover')) {
+    arrowButtonR.firstElementChild.style.backgroundColor = "#ff6a6d";
+    superButtonR.style.backgroundColor = "#ff6a6d";
+  }
+});
+superButtonR.addEventListener('mouseout', () => {
+  if (!arrowButtonR.matches(':hover')) {
+    arrowButtonR.firstElementChild.style.backgroundColor = "#e2383b";
+    superButtonR.style.backgroundColor = "#e2383b";
+  }
+});
+arrowButtonR.addEventListener('mouseover', () => {
+  if (!superButtonR.matches(':hover')) {
+    arrowButtonR.firstElementChild.style.backgroundColor = "#ff6a6d";
+    superButtonR.style.backgroundColor = "#ff6a6d";
+  }
+});
+arrowButtonR.addEventListener('mouseout', () => {
+  if (!superButtonR.matches(':hover')) {
+    arrowButtonR.firstElementChild.style.backgroundColor = "#e2383b";
+    superButtonR.style.backgroundColor = "#e2383b";
+  }
+});
+arrowButtonR.addEventListener('click', () => {
+  if (header_index == 7) {
+    header_index = 0;
+  } else {
+    header_index = 7;
+  }
+  updateHeaderLists();
+});
+
 //calcBeBoldHeight();
 updateCaroBackground();
 updateTrueGap();
 snapTo(2);
+
+on_homepage = true;
