@@ -116,6 +116,7 @@ body {
 .namespace {
     position: relative;
     padding: 4px;
+    padding-right: 0px;
     flex-grow: 0;
 }
 
@@ -166,7 +167,7 @@ body {
     overflow: visible;
 }
 
-.profile > div > h2 {
+.namespace > h2 {
     font-size: 1.5rem;
     font-family: "Prompt", sans-serif;
     font-style: normal;
@@ -175,7 +176,7 @@ body {
     margin: 0;
     width: auto;
     height: auto;
-    padding: 4px;
+    padding-top: 20px;
 }
 
 .profile > div:has(.colorbar) {
@@ -207,7 +208,7 @@ body {
 }
 
 .profile > div > .description > h4 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-family: "Prompt", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -249,11 +250,17 @@ body {
         font-size: 1.5rem;
     }
 
-    .profile > div > h1 {
+    .namespace > h1 {
         font-size: 1.5rem;
     }
 
-    .profile > div > h2 {
+    .namespace > h3 {
+        font-size: 6rem;
+        top: -1rem;
+        left: 1.5rem;
+    }
+
+    .namespace > h2 {
         font-size: 1.5rem;
     }
 
@@ -262,7 +269,7 @@ body {
     }
 
     .profile > div > .description > h4 {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
 
@@ -271,11 +278,7 @@ body {
         font-size: 1rem;
     }
 
-    .profile > div > h1 {
-        font-size: 1rem;
-    }
-
-    .profile > div > h2 {
+    .namespace > h2 {
         font-size: 1rem;
     }
 
@@ -284,7 +287,7 @@ body {
     }
 
     .profile > div > .description > h4 {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
     }
 }
 
