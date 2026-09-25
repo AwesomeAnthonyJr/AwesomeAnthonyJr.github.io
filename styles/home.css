@@ -208,7 +208,17 @@ body {
   background-color: white;
   margin: 0 0 0 0;
 }
-
+#bold{
+    mix-blend-mode: difference;
+    color: transparent;
+    background-color: whitesmoke;
+    background-clip: text;
+    font-size: 10lh;
+    z-index: 1;
+}
+.scroll-left, .scroll-right{
+    filter: blur(2px);
+}
 .carousel {
     position: relative;
     width: 100vw;
