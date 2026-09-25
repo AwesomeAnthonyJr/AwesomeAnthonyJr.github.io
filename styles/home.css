@@ -1663,7 +1663,7 @@ body {
 
 .header-tutorials {
     display: flex;
-    width: 980px;
+    width: 100%;
 }
 
 .header-tutorials > div {
