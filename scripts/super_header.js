@@ -27,6 +27,9 @@ superHeader.innerHTML = `
         <li><a href="/games/mage-hand">Mage Hand</a></li>
         <li><a href="/games/kill-protocol">Kill Protocol</a></li>
         <li><a href="/games/xcvb">XCVB</a></li>
+        <li><a href="/games/dui>DUI: Drive Until Impact</a></li>
+        <li><a href="/games/awtrau">A World That Revolves Around You</a></li>
+        <li><a href="/games/green-arsenal">Green Arsenal</a></li>
     </ul>
     <ul class="menu-m">
         <li><a href="/journal/">JOURNAL</a></li>
