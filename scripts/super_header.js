@@ -21,12 +21,15 @@ superHeader.innerHTML = `
     </ul>
     <ul class="menu-c">
         <li><a href="/games/">GAMES</a></li>
-        <li><a href="/games/shaharazon">SHAHARAZON</a></li>
-        <li><a href="/games/wyrm-canyon">Wyrm Canyon</a></li>
-        <li><a href="/games/goblin-knight">goblin knight</a></li>
-        <li><a href="/games/mage-hand">Mage Hand</a></li>
-        <li><a href="/games/kill-protocol">Kill Protocol</a></li>
-        <li><a href="/games/xcvb">XCVB</a></li>
+        <li><a href="/games/shaharazon.html">SHAHARAZON</a></li>
+        <li><a href="/games/wyrm-canyon.html">Wyrm Canyon</a></li>
+        <li><a href="/games/goblin-knight.html">goblin knight</a></li>
+        <li><a href="/games/mage-hand.html">Mage Hand</a></li>
+        <li><a href="/games/kill-protocol.html">Kill Protocol</a></li>
+        <li><a href="/games/xcvb.html">XCVB</a></li>
+        <li><a href="/games/dui.html">DUI: Drive Until Impact</a></li>
+        <li><a href="/games/awtrau.html">A World That Revolves Around You</a></li>
+        <li><a href="/games/green-arsenal.html">Green Arsenal</a></li>
     </ul>
     <ul class="menu-m">
         <li><a href="/journal/">JOURNAL</a></li>
@@ -36,7 +39,7 @@ superHeader.innerHTML = `
         <li><a href="/extras/">EXTRAS</a></li>
     </ul>
     <ul class="menu-b">
-        <li><a href="index.html">SECRETS</a></li>
+        <li><a href="/secrets/">SECRETS</a></li>
     </ul>
     <ul class="menu-r">
         <li><a href="/links/">LINKS</a></li>

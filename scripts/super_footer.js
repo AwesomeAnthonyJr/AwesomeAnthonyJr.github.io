@@ -30,6 +30,8 @@ superFooter.innerHTML = `
         <li><a href="https://leaflight-studios.itch.io/kill-protocol">itch.io|Kill Protocol</a></li>
         <li><a href="https://leaflight-studios.itch.io/xcvb">itch.io|XCVB</a></li>
         <li><a href="https://leaflight-studios.itch.io/dui">itch.io|DUI: Drive Until Impact</a></li>
+        <li><a href="https://leaflight-studios.itch.io/awtrau">itch.io|A World That Revolves Around You</a></li>
+        <li><a href="https://leaflight-studios.itch.io/green-arsenal">itch.io|Green Arsenal</a></li>
     </ul>
 </div>
 <div class ="super-footer-bottom">Website by Anthony D. Salsbury</div>
